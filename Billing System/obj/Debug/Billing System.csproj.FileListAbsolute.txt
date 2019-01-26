@@ -1,0 +1,289 @@
+D:\Billing System\Billing System\bin\Debug\Billing System.exe.config
+D:\Billing System\Billing System\bin\Debug\Billing System.exe
+D:\Billing System\Billing System\bin\Debug\Billing System.pdb
+D:\Billing System\Billing System\obj\Debug\Billing System.csprojResolveAssemblyReference.cache
+D:\Billing System\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
+D:\Billing System\Billing System\obj\Debug\Billing System.csproj.GenerateResource.cache
+D:\Billing System\Billing System\obj\Debug\Billing System.csproj.CoreCompileInputs.cache
+D:\Billing System\Billing System\obj\Debug\Billing System.exe
+D:\Billing System\Billing System\obj\Debug\Billing System.pdb
+D:\Billing System\Billing System\bin\Debug\Bunifu_UI_v1.52.dll
+D:\Billing System\Billing System\obj\Debug\Billing System.csproj.CopyComplete
+D:\Billing System\Billing System\obj\Debug\Billing_System.LoginForm.resources
+D:\Billing System\Billing System\obj\Debug\Billing_System.Invoice.resources
+H:\Billing System\Billing System\bin\Debug\Billing System.exe.config
+H:\Billing System\Billing System\obj\Debug\Billing System.exe
+H:\Billing System\Billing System\obj\Debug\Billing System.pdb
+H:\Billing System\Billing System\bin\Debug\Billing System.exe
+H:\Billing System\Billing System\bin\Debug\Billing System.pdb
+H:\Billing System\Billing System\bin\Debug\EntityFramework.dll
+H:\Billing System\Billing System\bin\Debug\EntityFramework.SqlServer.dll
+H:\Billing System\Billing System\bin\Debug\mscorlib.dll
+H:\Billing System\Billing System\bin\Debug\System.Data.SQLite.dll
+H:\Billing System\Billing System\bin\Debug\System.Data.SQLite.EF6.dll
+H:\Billing System\Billing System\bin\Debug\System.Data.SQLite.Linq.dll
+H:\Billing System\Billing System\bin\Debug\System.Net.Http.dll
+H:\Billing System\Billing System\bin\Debug\EntityFramework.xml
+H:\Billing System\Billing System\bin\Debug\EntityFramework.SqlServer.xml
+H:\Billing System\Billing System\bin\Debug\System.Data.SQLite.xml
+H:\Billing System\Billing System\bin\Debug\System.Net.Http.xml
+H:\Billing System\Billing System\bin\Debug\normidna.nlp
+H:\Billing System\Billing System\bin\Debug\normnfc.nlp
+H:\Billing System\Billing System\bin\Debug\normnfd.nlp
+H:\Billing System\Billing System\bin\Debug\normnfkc.nlp
+H:\Billing System\Billing System\bin\Debug\normnfkd.nlp
+H:\Billing System\Billing System\obj\Debug\Billing System.csprojResolveAssemblyReference.cache
+H:\Billing System\Billing System\obj\Debug\Billing_System.LoginForm.resources
+H:\Billing System\Billing System\obj\Debug\Billing_System.Invoice.resources
+H:\Billing System\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
+H:\Billing System\Billing System\obj\Debug\Billing System.csproj.GenerateResource.Cache
+E:\Billing System\Billing System\bin\Debug\Billing System.exe.config
+E:\Billing System\Billing System\bin\Debug\Billing System.exe
+E:\Billing System\Billing System\bin\Debug\Billing System.pdb
+E:\Billing System\Billing System\bin\Debug\EntityFramework.dll
+E:\Billing System\Billing System\bin\Debug\EntityFramework.SqlServer.dll
+E:\Billing System\Billing System\bin\Debug\System.Data.SQLite.dll
+E:\Billing System\Billing System\bin\Debug\System.Data.SQLite.EF6.dll
+E:\Billing System\Billing System\bin\Debug\System.Data.SQLite.Linq.dll
+E:\Billing System\Billing System\bin\Debug\EntityFramework.xml
+E:\Billing System\Billing System\bin\Debug\EntityFramework.SqlServer.xml
+E:\Billing System\Billing System\bin\Debug\System.Data.SQLite.xml
+E:\Billing System\Billing System\bin\Debug\System.Data.SQLite.dll.config
+E:\Billing System\Billing System\obj\Debug\Billing System.csprojResolveAssemblyReference.cache
+E:\Billing System\Billing System\obj\Debug\Billing_System.LoginForm.resources
+E:\Billing System\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
+E:\Billing System\Billing System\obj\Debug\Billing System.csproj.GenerateResource.cache
+E:\Billing System\Billing System\obj\Debug\Billing System.csproj.CoreCompileInputs.cache
+E:\Billing System\Billing System\obj\Debug\Billing System.csproj.CopyComplete
+E:\Billing System\Billing System\obj\Debug\Billing System.exe
+E:\Billing System\Billing System\obj\Debug\Billing System.pdb
+E:\Billing System\Billing System\obj\Debug\Billing_System.SupplyInvoice.resources
+E:\Billing System\Billing System\obj\Debug\Billing_System.Dashboard.resources
+E:\Billing System\Billing System\obj\Debug\Billing_System.ShopInvoice.resources
+E:\Billing System\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+E:\Billing System\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\backup\Billing System\Billing System\bin\Debug\Billing System.exe.config
+D:\backup\Billing System\Billing System\bin\Debug\Billing System.exe
+D:\backup\Billing System\Billing System\bin\Debug\Billing System.pdb
+D:\backup\Billing System\Billing System\bin\Debug\EntityFramework.dll
+D:\backup\Billing System\Billing System\bin\Debug\EntityFramework.SqlServer.dll
+D:\backup\Billing System\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\backup\Billing System\Billing System\bin\Debug\System.Data.SQLite.dll
+D:\backup\Billing System\Billing System\bin\Debug\System.Data.SQLite.EF6.dll
+D:\backup\Billing System\Billing System\bin\Debug\System.Data.SQLite.Linq.dll
+D:\backup\Billing System\Billing System\bin\Debug\EntityFramework.xml
+D:\backup\Billing System\Billing System\bin\Debug\EntityFramework.SqlServer.xml
+D:\backup\Billing System\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\backup\Billing System\Billing System\bin\Debug\System.Data.SQLite.xml
+D:\backup\Billing System\Billing System\bin\Debug\System.Data.SQLite.dll.config
+D:\backup\Billing System\Billing System\obj\Debug\Billing System.csprojResolveAssemblyReference.cache
+D:\backup\Billing System\Billing System\obj\Debug\Billing_System.Dashboard.resources
+D:\backup\Billing System\Billing System\obj\Debug\Billing_System.LoginForm.resources
+D:\backup\Billing System\Billing System\obj\Debug\Billing_System.ShopInvoice.resources
+D:\backup\Billing System\Billing System\obj\Debug\Billing_System.SupplyInvoice.resources
+D:\backup\Billing System\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
+D:\backup\Billing System\Billing System\obj\Debug\Billing System.csproj.GenerateResource.cache
+D:\backup\Billing System\Billing System\obj\Debug\Billing System.csproj.CoreCompileInputs.cache
+D:\backup\Billing System\Billing System\obj\Debug\Billing System.csproj.CopyComplete
+D:\backup\Billing System\Billing System\obj\Debug\Billing System.exe
+D:\backup\Billing System\Billing System\obj\Debug\Billing System.pdb
+E:\Billing System\Billing System\obj\Debug\Billing_System.ChangePass.resources
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\Billing System.exe.config
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\obj\Debug\Billing System.exe
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\obj\Debug\Billing System.pdb
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\Billing System.exe
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\Billing System.pdb
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\EntityFramework.dll
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\System.Data.SQLite.dll
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\EntityFramework.xml
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\bin\Debug\System.Data.SQLite.xml
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\obj\Debug\Billing System.csprojResolveAssemblyReference.cache
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\obj\Debug\Billing_System.ChangePass.resources
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\obj\Debug\Billing_System.Dashboard.resources
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\obj\Debug\Billing_System.LoginForm.resources
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\obj\Debug\Billing_System.ShopInvoice.resources
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\obj\Debug\Billing_System.SupplyInvoice.resources
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
+C:\Users\TeacherPC\Documents\Data\Tahir\Billing System\Billing System\obj\Debug\Billing System.csproj.GenerateResource.Cache
+F:\Billing System_new\Billing System\bin\Debug\Billing System.exe.config
+F:\Billing System_new\Billing System\bin\Debug\Billing System.exe
+F:\Billing System_new\Billing System\bin\Debug\Billing System.pdb
+F:\Billing System_new\Billing System\bin\Debug\EntityFramework.dll
+F:\Billing System_new\Billing System\bin\Debug\EntityFramework.SqlServer.dll
+F:\Billing System_new\Billing System\bin\Debug\System.Data.SQLite.dll
+F:\Billing System_new\Billing System\bin\Debug\System.Data.SQLite.EF6.dll
+F:\Billing System_new\Billing System\bin\Debug\System.Data.SQLite.Linq.dll
+F:\Billing System_new\Billing System\bin\Debug\EntityFramework.xml
+F:\Billing System_new\Billing System\bin\Debug\EntityFramework.SqlServer.xml
+F:\Billing System_new\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+F:\Billing System_new\Billing System\bin\Debug\System.Data.SQLite.xml
+F:\Billing System_new\Billing System\bin\Debug\System.Data.SQLite.dll.config
+F:\Billing System_new\Billing System\obj\Debug\Billing System.csprojAssemblyReference.cache
+F:\Billing System_new\Billing System\obj\Debug\Billing_System.Dashboard.resources
+F:\Billing System_new\Billing System\obj\Debug\Billing_System.LoginForm.resources
+F:\Billing System_new\Billing System\obj\Debug\Billing_System.ShopInvoice.resources
+F:\Billing System_new\Billing System\obj\Debug\Billing_System.SupplyInvoice.resources
+F:\Billing System_new\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
+F:\Billing System_new\Billing System\obj\Debug\Billing System.csproj.GenerateResource.cache
+F:\Billing System_new\Billing System\obj\Debug\Billing System.csproj.CoreCompileInputs.cache
+F:\Billing System_new\Billing System\obj\Debug\Billing System.csproj.CopyComplete
+F:\Billing System_new\Billing System\obj\Debug\Billing System.exe
+F:\Billing System_new\Billing System\obj\Debug\Billing System.pdb
+F:\Billing System_new\Billing System\bin\Debug\Bunifu_UI_v1.52.dll
+F:\Billing System_new\Billing System\obj\Debug\Billing_System.ForgotPassword.resources
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\Billing System.exe.config
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\Billing System.exe
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\Billing System.pdb
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\EntityFramework.dll
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\EntityFramework.SqlServer.dll
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\System.Data.SQLite.dll
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\System.Data.SQLite.EF6.dll
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\System.Data.SQLite.Linq.dll
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\EntityFramework.xml
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\EntityFramework.SqlServer.xml
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\System.Data.SQLite.xml
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\System.Data.SQLite.dll.config
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing_System.ForgotPassword.resources
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing_System.Dashboard.resources
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing_System.LoginForm.resources
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing_System.ShopInvoice.resources
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing_System.SupplyInvoice.resources
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing System.csproj.GenerateResource.cache
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing System.csproj.CoreCompileInputs.cache
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing System.csproj.CopyComplete
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing System.exe
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing System.pdb
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\DevComponents.DotNetBar2.dll
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\MetroFramework.dll
+E:\tahir  data\Billing System_new\Billing System\bin\Debug\DevComponents.DotNetBar2.xml
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing_System.MainForm.resources
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.Home.resources
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.Login.resources
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.ShopInvoice.resources
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.ViewInvioces.resources
+E:\tahir  data\Billing System_new\Billing System\obj\Debug\Billing System.csprojAssemblyReference.cache
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.ForgotPassword.resources
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.Dashboard.resources
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.LoginForm.resources
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.MainForm.resources
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.ShopInvoice.resources
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.SupplyInvoice.resources
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.Home.resources
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.Login.resources
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.ShopInvoice.resources
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.ViewInvioces.resources
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing System.csproj.GenerateResource.cache
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing System.csproj.CoreCompileInputs.cache
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing System.exe
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing System.pdb
+E:\myData\Billing System_new\Billing System\bin\Debug\Billing System.exe.config
+E:\myData\Billing System_new\Billing System\bin\Debug\Billing System.exe
+E:\myData\Billing System_new\Billing System\bin\Debug\Billing System.pdb
+E:\myData\Billing System_new\Billing System\bin\Debug\DevComponents.DotNetBar2.dll
+E:\myData\Billing System_new\Billing System\bin\Debug\EntityFramework.dll
+E:\myData\Billing System_new\Billing System\bin\Debug\EntityFramework.SqlServer.dll
+E:\myData\Billing System_new\Billing System\bin\Debug\MetroFramework.dll
+E:\myData\Billing System_new\Billing System\bin\Debug\DevComponents.DotNetBar2.xml
+E:\myData\Billing System_new\Billing System\bin\Debug\EntityFramework.xml
+E:\myData\Billing System_new\Billing System\bin\Debug\EntityFramework.SqlServer.xml
+E:\myData\Billing System_new\Billing System\obj\Debug\Billing System.csproj.CopyComplete
+E:\myData\Billing System_new\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+E:\myData\Billing System_new\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\myData\Billing System_new\Billing System\bin\Debug\Billing System.exe.config
+D:\myData\Billing System_new\Billing System\bin\Debug\Billing System.exe
+D:\myData\Billing System_new\Billing System\bin\Debug\Billing System.pdb
+D:\myData\Billing System_new\Billing System\bin\Debug\EntityFramework.dll
+D:\myData\Billing System_new\Billing System\bin\Debug\EntityFramework.SqlServer.dll
+D:\myData\Billing System_new\Billing System\bin\Debug\MetroFramework.dll
+D:\myData\Billing System_new\Billing System\bin\Debug\DevComponents.DotNetBar2.xml
+D:\myData\Billing System_new\Billing System\bin\Debug\EntityFramework.xml
+D:\myData\Billing System_new\Billing System\bin\Debug\EntityFramework.SqlServer.xml
+D:\myData\Billing System_new\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing System.csprojAssemblyReference.cache
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.ForgotPassword.resources
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.Dashboard.resources
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.LoginForm.resources
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.MainForm.resources
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.ShopInvoice.resources
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.SupplyInvoice.resources
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.Home.resources
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.Login.resources
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.ShopInvoice.resources
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.ViewInvioces.resources
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing System.csproj.GenerateResource.cache
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing System.csproj.CoreCompileInputs.cache
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing System.csproj.CopyComplete
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing System.exe
+D:\myData\Billing System_new\Billing System\obj\Debug\Billing System.pdb
+D:\Projects\Billing System_new\Billing System\bin\Debug\Billing System.exe.config
+D:\Projects\Billing System_new\Billing System\bin\Debug\Billing System.exe
+D:\Projects\Billing System_new\Billing System\bin\Debug\Billing System.pdb
+D:\Projects\Billing System_new\Billing System\bin\Debug\EntityFramework.dll
+D:\Projects\Billing System_new\Billing System\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Billing System_new\Billing System\bin\Debug\DevComponents.DotNetBar2.xml
+D:\Projects\Billing System_new\Billing System\bin\Debug\EntityFramework.xml
+D:\Projects\Billing System_new\Billing System\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Billing System_new\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.ForgotPassword.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.Dashboard.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.LoginForm.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.MainForm.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.ShopInvoice.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.SupplyInvoice.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.Home.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.Login.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.ShopInvoice.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.ViewInvioces.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing System.csproj.GenerateResource.cache
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing System.csproj.CoreCompileInputs.cache
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing System.csproj.CopyComplete
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing System.exe
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing System.pdb
+D:\Projects\Billing System_new\Billing System\bin\Debug\DevComponents.DotNetBar2.dll
+D:\Projects\Billing System_new\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.NewMedicine.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.ViewStock.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing_System.User_Controls.Signup.resources
+D:\Projects\Billing System_new\Billing System\obj\Debug\Billing System.csprojAssemblyReference.cache
+D:\Projects\Billing System\Billing System\bin\Debug\Billing System.exe.config
+D:\Projects\Billing System\Billing System\bin\Debug\Billing System.exe
+D:\Projects\Billing System\Billing System\bin\Debug\Billing System.pdb
+D:\Projects\Billing System\Billing System\bin\Debug\DevComponents.DotNetBar2.dll
+D:\Projects\Billing System\Billing System\bin\Debug\EntityFramework.dll
+D:\Projects\Billing System\Billing System\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Billing System\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\Projects\Billing System\Billing System\bin\Debug\DevComponents.DotNetBar2.xml
+D:\Projects\Billing System\Billing System\bin\Debug\EntityFramework.xml
+D:\Projects\Billing System\Billing System\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Billing System\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\Projects\Billing System\Billing System\obj\Debug\Billing System.csprojAssemblyReference.cache
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.ForgotPassword.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.Dashboard.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.LoginForm.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.MainForm.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.ShopInvoice.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.SupplyInvoice.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.User_Controls.Home.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.User_Controls.Login.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.User_Controls.NewMedicine.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.User_Controls.ShopInvoice.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.User_Controls.Signup.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.User_Controls.ViewInvioces.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.User_Controls.ViewStock.resources
+D:\Projects\Billing System\Billing System\obj\Debug\Billing System.csproj.GenerateResource.cache
+D:\Projects\Billing System\Billing System\obj\Debug\Billing System.csproj.CoreCompileInputs.cache
+D:\Projects\Billing System\Billing System\obj\Debug\Billing System.csproj.CopyComplete
+D:\Projects\Billing System\Billing System\obj\Debug\Billing System.exe
+D:\Projects\Billing System\Billing System\obj\Debug\Billing System.pdb

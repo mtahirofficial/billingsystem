@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SQLite;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -18,8 +18,8 @@ namespace Billing_System
         {
             InitializeComponent();
         }
-        SQLiteConnection objConnectionLogin;
-        SQLiteCommand objSelectCmd;
+        SqlConnection objConnectionLogin;
+        SqlCommand objSelectCmd;
         
         private void lblUserName_Click(object sender, EventArgs e)
         {
@@ -55,14 +55,14 @@ namespace Billing_System
             else
             {
 
-                objSelectCmd = new SQLiteCommand(
+                objSelectCmd = new SqlCommand(
                     "select * from Login where User_Name = '" + txtUserName.Text + "' and Password = '" + txtPassword.Text + "'",
                     objConnectionLogin);
                 
                 objConnectionLogin.Open();
                 try
                 {
-                    SQLiteDataReader objReader = objSelectCmd.ExecuteReader();
+                    SqlDataReader objReader = objSelectCmd.ExecuteReader();
                     {
                         if (objReader.Read())
                         {
@@ -93,7 +93,7 @@ namespace Billing_System
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            objConnectionLogin = new SQLiteConnection(SystemFunctions.ConnectionString());
+            objConnectionLogin = new SqlConnection(SystemFunctions.ConnectionString());
         }
 
         private void txtUserName_KeyDown(object sender, KeyEventArgs e)

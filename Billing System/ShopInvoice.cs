@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SQLite;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,7 +17,7 @@ namespace Billing_System
         {
             InitializeComponent();
         }
-        SQLiteConnection objConnection;
+        SqlConnection objConnection;
         DataSet dsInvoice;
         public void ClearTextBoxes()
         {
@@ -88,8 +88,8 @@ namespace Billing_System
             objConnection.Open();
             try
             {
-                SQLiteCommand MaxInvoice = new SQLiteCommand("Select max(InvoiceNo) From ShopCustomer", objConnection);
-                SQLiteDataReader MaxReader = MaxInvoice.ExecuteReader();
+                SqlCommand MaxInvoice = new SqlCommand("Select max(InvoiceNo) From ShopCustomer", objConnection);
+                SqlDataReader MaxReader = MaxInvoice.ExecuteReader();
                 if (MaxReader.Read())
                 {
                     double max = Convert.ToDouble(MaxReader.GetValue(0));
@@ -102,7 +102,7 @@ namespace Billing_System
                 MaxReader.Close();
 
             }
-            catch(SQLiteException ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
 
@@ -173,12 +173,12 @@ namespace Billing_System
             txtAdvance.Text = "0";
             txtbalance.Text = "0";
             txtCustomerName.Focus();
-            objConnection = new SQLiteConnection(SystemFunctions.ConnectionString());
+            objConnection = new SqlConnection(SystemFunctions.ConnectionString());
             objConnection.Open();
             try
             {
-                SQLiteCommand MaxInvoice = new SQLiteCommand("Select max(InvoiceNo) From ShopCustomer", objConnection);
-                SQLiteDataReader MaxReader = MaxInvoice.ExecuteReader();
+                SqlCommand MaxInvoice = new SqlCommand("Select max(InvoiceNo) From ShopCustomer", objConnection);
+                SqlDataReader MaxReader = MaxInvoice.ExecuteReader();
                 if (MaxReader.Read())
                 {
                     double max = Convert.ToDouble(MaxReader.GetValue(0));
@@ -192,7 +192,7 @@ namespace Billing_System
                 MaxReader.Close();
 
             }
-            catch (SQLiteException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
 
@@ -313,7 +313,6 @@ namespace Billing_System
         {
             if (e.KeyCode == Keys.Enter)
             {
-                
                 if (txtCustomerName.Text == "" && txtPhone.Text == "" && txtProduct.Text == "" && txtQuantity.Text == "" && txtxBatchNo.Text == "" && txtUnitPrice.Text == "")
                 {
                     MessageBox.Show("All Fields are Required.", "Message", MessageBoxButtons.OK);
@@ -355,17 +354,17 @@ namespace Billing_System
                     objConnection.Open();
                     try
                     {
-                        SQLiteCommand cmdInsertInvoice = new SQLiteCommand("INSERT INTO ShopInvoice ([InvoiceNo], [SerialNo], [Product], [Quantity], [BatchNo], [UnitPrice],[TotalPrice]) VALUES ('" + txtInvoice.Text + "' , '" + txtSerialNo.Text + "','" + txtProduct.Text + "','" + txtQuantity.Text + "','" + txtxBatchNo.Text + "','" + txtUnitPrice.Text + "','" + txtTotalPrice.Text + "')", objConnection);
+                        SqlCommand cmdInsertInvoice = new SqlCommand("INSERT INTO ShopInvoice ([InvoiceNo], [SerialNo], [Product], [Quantity], [BatchNo], [UnitPrice],[TotalPrice]) VALUES ('" + txtInvoice.Text + "' , '" + txtSerialNo.Text + "','" + txtProduct.Text + "','" + txtQuantity.Text + "','" + txtxBatchNo.Text + "','" + txtUnitPrice.Text + "','" + txtTotalPrice.Text + "')", objConnection);
                         cmdInsertInvoice.ExecuteNonQuery();
-                        SQLiteCommand cmdSelectCmd = new SQLiteCommand("SELECT SerialNo, Product, Quantity, BatchNo, UnitPrice, TotalPrice FROM ShopInvoice WHERE InvoiceNo == '" + txtInvoice.Text + "'", objConnection);
-                        SQLiteDataAdapter daInvoice = new SQLiteDataAdapter(cmdSelectCmd.CommandText, objConnection);
+                        SqlCommand cmdSelectCmd = new SqlCommand("SELECT SerialNo, Product, Quantity, BatchNo, UnitPrice, TotalPrice FROM ShopInvoice WHERE InvoiceNo == '" + txtInvoice.Text + "'", objConnection);
+                        SqlDataAdapter daInvoice = new SqlDataAdapter(cmdSelectCmd.CommandText, objConnection);
                         dsInvoice = new DataSet();
 
                         daInvoice.Fill(dsInvoice, "Invoice");
                         gridProducts.DataSource = dsInvoice.Tables["Invoice"].DefaultView;
 
                     }
-                    catch (SQLiteException ex)
+                    catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
 
@@ -413,13 +412,13 @@ namespace Billing_System
             {
                 try
                 {
-                    SQLiteCommand cmdInsertCustomer = new SQLiteCommand("INSERT INTO ShopCustomer ([InvoiceNo], [CustomerName], [Mobile]) VALUES ('" + txtInvoice.Text + "', '" + txtCustomerName.Text + "','" + txtPhone.Text + "')", objConnection);
+                    SqlCommand cmdInsertCustomer = new SqlCommand("INSERT INTO ShopCustomer ([InvoiceNo], [CustomerName], [Mobile]) VALUES ('" + txtInvoice.Text + "', '" + txtCustomerName.Text + "','" + txtPhone.Text + "')", objConnection);
                     cmdInsertCustomer.ExecuteNonQuery();
-                    SQLiteCommand cmdInsertAmount = new SQLiteCommand("INSERT INTO ShopAmount ([InvoiceNo], [TotalAmount]) VALUES ('" + txtInvoice.Text + "','" + txtTotalAmount.Text + "')", objConnection);
+                    SqlCommand cmdInsertAmount = new SqlCommand("INSERT INTO ShopAmount ([InvoiceNo], [TotalAmount]) VALUES ('" + txtInvoice.Text + "','" + txtTotalAmount.Text + "')", objConnection);
                     cmdInsertAmount.ExecuteNonQuery();
                     MessageBox.Show("Record is Entered.", "Message", MessageBoxButtons.OK);
                 }
-                catch (SQLiteException ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
 
@@ -450,13 +449,13 @@ namespace Billing_System
             {
                 if (txtInvoice.Text != "")
                 {
-                    SQLiteCommand cmdSelectAmount = new SQLiteCommand("SELECT SUM(TotalPrice) FROM ShopInvoice WHERE InvoiceNo == '" + txtInvoice.Text + "'", objConnection);
+                    SqlCommand cmdSelectAmount = new SqlCommand("SELECT SUM(TotalPrice) FROM ShopInvoice WHERE InvoiceNo == '" + txtInvoice.Text + "'", objConnection);
                     double amount = Convert.ToDouble(cmdSelectAmount.ExecuteScalar());
                     txtTotalAmount.Text = amount.ToString();
 
                 }
             }
-            catch (SQLiteException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
 

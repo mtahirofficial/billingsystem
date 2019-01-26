@@ -37,7 +37,7 @@
             this.txtCode = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.txtPassword = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.txtDescription = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblPassword = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.asd = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pbCaptcha = new System.Windows.Forms.PictureBox();
             this.lblLogin = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -68,7 +68,7 @@
             this.panel2.Controls.Add(this.txtCode);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.txtDescription);
-            this.panel2.Controls.Add(this.lblPassword);
+            this.panel2.Controls.Add(this.asd);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 52);
@@ -164,17 +164,17 @@
             this.txtDescription.Text = "[type security code here]";
             this.txtDescription.Click += new System.EventHandler(this.txtDescription_Click);
             // 
-            // lblPassword
+            // asd
             // 
-            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(27, 26);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(123, 20);
-            this.lblPassword.TabIndex = 0;
-            this.lblPassword.Text = "New Password:";
-            this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
+            this.asd.BackColor = System.Drawing.Color.Transparent;
+            this.asd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asd.ForeColor = System.Drawing.Color.White;
+            this.asd.Location = new System.Drawing.Point(27, 26);
+            this.asd.Name = "asd";
+            this.asd.Size = new System.Drawing.Size(123, 20);
+            this.asd.TabIndex = 0;
+            this.asd.Text = "New Password:";
+            this.asd.Click += new System.EventHandler(this.lblPassword_Click);
             // 
             // groupBox1
             // 
@@ -238,7 +238,7 @@
         private System.Windows.Forms.PictureBox pbCaptcha;
         private System.Windows.Forms.Panel panel2;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtPassword;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblPassword;
+        private Bunifu.Framework.UI.BunifuCustomLabel asd;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtCode;
         private Bunifu.Framework.UI.BunifuCustomLabel txtDescription;
         private System.Windows.Forms.Button btnRefreshCaptcha;
