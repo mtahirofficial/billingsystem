@@ -20,6 +20,22 @@ namespace Billing_System.User_Controls
 
         SqlConnection con;
 
+        public void ClearTextBoxes()
+        {
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                    if (control is TextBox)
+                        (control as TextBox).Clear();
+                    else
+                        func(control.Controls);
+            };
+
+            func(Controls);
+        }
+
         private void ViewStock_Load(object sender, EventArgs e)
         {
             con = new SqlConnection(SystemFunctions.ConnectionString());
@@ -130,9 +146,14 @@ namespace Billing_System.User_Controls
         {
             if (e.Button == MouseButtons.Right)
             {
-                var ht = dgvMediList.HitTest(e.X, e.Y);
-                dgvMediList.Rows[ht.RowIndex].Selected = true;
-                menuDGV.Show(dgvMediList, e.X, e.Y);
+                if (dgvMediList.Rows.Count > 0)
+                {
+                    var ht = dgvMediList.HitTest(e.X, e.Y);
+                    dgvMediList.ClearSelection();
+                    dgvMediList.Rows[ht.RowIndex].Selected = true;
+                    menuDGV.Show(dgvMediList, e.X, e.Y);
+                }
+                
             }
         }
 
@@ -146,12 +167,14 @@ namespace Billing_System.User_Controls
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int rowIndex = dgvMediList.CurrentCell.RowIndex;
+            //int rowIndex = dgvMediList.CurrentCell.RowIndex;
+            int rowIndex = dgvMediList.SelectedRows[0].Index;
             txtID.Text = dgvMediList.Rows[rowIndex].Cells[0].Value.ToString();
             txtMedi.Text = dgvMediList.Rows[rowIndex].Cells[1].Value.ToString();
             txtBatch.Text = dgvMediList.Rows[rowIndex].Cells[2].Value.ToString();
             txtQty.Text = dgvMediList.Rows[rowIndex].Cells[3].Value.ToString();
             txtRate.Text = dgvMediList.Rows[rowIndex].Cells[4].Value.ToString();
+            dgvMediList.ClearSelection();
             
         }
 
@@ -182,6 +205,7 @@ namespace Billing_System.User_Controls
                 txtMediName.Focus();
             }
             reader.Close();
+            ClearTextBoxes();
         }
     }
 }

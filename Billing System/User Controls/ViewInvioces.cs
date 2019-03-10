@@ -15,9 +15,18 @@ namespace Billing_System.User_Controls
 
         SqlConnection cmdConnection;
         SqlCommand cmdSelect;
+        SqlCommand cmdUpdate;
         SqlDataAdapter dataAdapter;
         DataSet dataSet;
 
+        public string TotalPrice(string varQuantity, string varUnitPrice)
+        {
+            double varNewQuantity = Convert.ToDouble(varQuantity);
+            double varNewUnitPrice = Convert.ToDouble(varUnitPrice);
+            double varTotalPrice = varNewQuantity * varNewUnitPrice;
+            string varTotalpriceS = Convert.ToString(varTotalPrice);
+            return varTotalpriceS;
+        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -43,6 +52,13 @@ namespace Billing_System.User_Controls
                     dataAdapter.Fill(dataSet, "invoiceList");
                     dgvInvoiceList.DataSource = dataSet.Tables["invoiceList"].DefaultView;
                 }
+                reader.Close();
+                dgvInvoice.DataSource = null;
+                dgvInvoice.Visible = false;
+                dgvInvoice.SendToBack();
+                btnUpdate.Enabled = false;
+                btnBack.Enabled = false;
+                panel2.Visible = false;
             }
             else if (txtPhoneNo.Text != "" && txtInvoiceNo.Text == "")
             {
@@ -61,6 +77,13 @@ namespace Billing_System.User_Controls
                     dataAdapter.Fill(dataSet, "invoiceList");
                     dgvInvoiceList.DataSource = dataSet.Tables["invoiceList"].DefaultView;
                 }
+                reader.Close();
+                dgvInvoice.DataSource = null;
+                dgvInvoice.Visible = false;
+                dgvInvoice.SendToBack();
+                btnUpdate.Enabled = false;
+                btnBack.Enabled = false;
+                panel2.Visible = false;
             }
             else
             {
@@ -76,7 +99,15 @@ namespace Billing_System.User_Controls
                     dgvInvoiceList.DataSource = dataSet.Tables["invoiceList"].DefaultView;
                 }
                 reader.Close();
+                dgvInvoice.DataSource = null;
+                dgvInvoice.Visible = false;
+                dgvInvoice.SendToBack();
+                btnUpdate.Enabled = false;
+                btnBack.Enabled = false;
+                panel2.Visible = false;
             }
+            
+            
 
         }
 
@@ -116,6 +147,11 @@ namespace Billing_System.User_Controls
                 dataAdapter.Fill(dataSet, "invoiceListFull");
                 dgvInvoiceList.DataSource = dataSet.Tables["invoiceListFull"].DefaultView;
             }
+            reader.Close();
+            btnBack.Enabled = false;
+            btnUpdate.Enabled = false;
+            dgvInvoice.Visible = false;
+            panel2.Visible = false;
         }
 
         private void txtPhoneNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -151,15 +187,28 @@ namespace Billing_System.User_Controls
         }
 
 
-
+        static string invoiceNo;
         private void viewInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int rowIndex = dgvInvoiceList.SelectedRows[0].Index;
-            //MessageBox.Show("Selected Row Index is " + rowIndex.ToString() + ".", "test");
-            DataGridViewRow row = this.dgvInvoiceList.SelectedRows[0];
-            //MessageBox.Show("Selected Values is " + row.Cells["colInvoiceNo"].Value);
+            btnBack.Enabled = true;
+            btnUpdate.Enabled = true;
 
-            string invoiceNo = row.Cells[0].Value.ToString();
+            int rowIndex = dgvInvoiceList.SelectedRows[0].Index;
+            DataGridViewRow row = this.dgvInvoiceList.SelectedRows[0];
+
+            invoiceNo = row.Cells[0].Value.ToString();
+            string phoneNo = row.Cells[2].Value.ToString();
+
+            try
+            {
+                System.Diagnostics.Process.Start(@"C:\Users\Tahir\Documents\" + phoneNo + ".pdf");
+
+            }
+            catch(Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+
             if (cmdConnection.State == ConnectionState.Closed)
             {
                 cmdConnection.Open();
@@ -172,18 +221,32 @@ namespace Billing_System.User_Controls
             {
                 reader.Close();
                 dataAdapter.Fill(dataSet, "invoiceListFull");
-                dgvInvoiceList.DataSource = dataSet.Tables["invoiceListFull"].DefaultView;
+                dgvInvoice.DataSource = dataSet.Tables["invoiceListFull"].DefaultView;
+                dgvInvoice.Visible = true;
+                dgvInvoice.BringToFront();
+            } else
+            {
+                MessageBox.Show("No Data is Available.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            reader.Close();
         }
 
         private void dgvInvoiceList_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                var ht = dgvInvoiceList.HitTest(e.X, e.Y);
-                dgvInvoiceList.Rows[ht.RowIndex].Selected = true;
-                contextMenuStrip1.Show(dgvInvoiceList, e.X, e.Y);
+                if (dgvInvoiceList.Rows.Count > 0)
+                {
+                    var ht = dgvInvoiceList.HitTest(e.X, e.Y);
+                    dgvInvoiceList.ClearSelection();
+                    dgvInvoiceList.Rows[ht.RowIndex].Selected = true;
+                    contextMenuStrip1.Show(dgvInvoiceList, e.X, e.Y);
+                    editToolStripMenuItem.Visible = false;
+                    viewInvoiceToolStripMenuItem.Visible = true;
+                }
+
             }
+
         }
 
         private void dgvInvoiceList_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -191,6 +254,227 @@ namespace Billing_System.User_Controls
             using (SolidBrush b = new SolidBrush(dgvInvoiceList.RowHeadersDefaultCellStyle.ForeColor))
             {
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            dgvInvoice.DataSource = null;
+            dgvInvoice.Visible = false;
+            dgvInvoice.SendToBack();
+            btnUpdate.Enabled = false;
+            btnBack.Enabled = false;
+            panel2.Visible = false;
+
+        }
+
+        private void dgvInvoice_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(dgvInvoice.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dgvInvoice.CurrentCell.RowIndex;
+            if (cmdConnection.State == ConnectionState.Closed)
+            {
+                cmdConnection.Open();
+            }
+
+            SqlCommand cmdDelete = new SqlCommand("delete from ShopInvoice where InvoiceNo = '" + invoiceNo + "'", cmdConnection);
+            SqlDataReader delReader = cmdDelete.ExecuteReader();
+            delReader.Close();
+            
+            if (dgvInvoice.Rows.Count >= 1)
+            {
+                foreach (DataGridViewRow row in dgvInvoice.Rows)
+                {
+                    SqlCommand cmdInsert = new SqlCommand("Insert into ShopInvoice (InvoiceNo, SerialNo, Product, Quantity, BatchNo, UnitPrice, TotalPrice, Date) values ('" + invoiceNo + "','" + row.Cells[0].Value + "','" + row.Cells[1].Value + "','" + row.Cells[2].Value + "','" + row.Cells[3].Value + "','" + row.Cells[4].Value + "','" + row.Cells[5].Value + "','" + row.Cells[6].Value + "')", cmdConnection);
+                    cmdInsert.ExecuteNonQuery();
+                    //SqlCommand cmdUpdate = new SqlCommand("Update MedicineStock set Quantity = '" + row.Cells[2].Value + "' where MedicineName = '" + row.Cells[1].Value + "'", cmdConnection);
+                    //cmdUpdate.ExecuteNonQuery();
+
+                    MessageBox.Show("0:" + row.Cells[0].Value + "   1:" + row.Cells[1].Value + "   2:" + row.Cells[2].Value + "   3:" + row.Cells[3].Value + "   4:" + row.Cells[4].Value + "   5:" + row.Cells[5].Value + "   6:" + row.Cells[6].Value, "Test DatagridView", MessageBoxButtons.OK);
+                }
+            }
+            
+            SqlCommand cmdSelect = new SqlCommand("select * from ShopInvoice where InvoiceNo = '" + invoiceNo + "'", cmdConnection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdSelect.CommandText, cmdConnection);
+            DataSet dataSet = new DataSet();
+            SqlDataReader reader = cmdSelect.ExecuteReader();
+
+            if (reader.Read())
+            {
+                reader.Close();
+                dataAdapter.Fill(dataSet, "invoiceList");
+                dgvInvoice.DataSource = dataSet.Tables["invoiceList"].DefaultView;
+            }
+            else
+            {
+                MessageBox.Show("There is no stock", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dgvInvoice.DataSource = null;
+                //txtMediName.Focus();
+            }
+            reader.Close();
+
+        }
+
+        private void dgvInvoice_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (dgvInvoiceList.Rows.Count > 0)
+                {
+                    dgvInvoiceList.ClearSelection();
+                    var ht = dgvInvoice.HitTest(e.X, e.Y);
+                    dgvInvoice.Rows[ht.RowIndex].Selected = true;
+                    contextMenuStrip1.Show(dgvInvoice, e.X, e.Y);
+                    viewInvoiceToolStripMenuItem.Visible = false;
+                    editToolStripMenuItem.Visible = true;
+                    
+                }
+
+            }
+
+            
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+            int rowIndex = dgvInvoice.SelectedRows[0].Index;
+            //DataGridViewRow row = this.dgvInvoice.SelectedRows[0];
+
+            //invoiceNo = row.Cells[0].Value.ToString();
+            txtSrNo.Text = dgvInvoice.Rows[rowIndex].Cells[0].Value.ToString();
+            txtMedi.Text = dgvInvoice.Rows[rowIndex].Cells[1].Value.ToString();
+            txtBatch.Text = dgvInvoice.Rows[rowIndex].Cells[2].Value.ToString();
+            txtQty.Text = dgvInvoice.Rows[rowIndex].Cells[3].Value.ToString();
+            txtRate.Text = dgvInvoice.Rows[rowIndex].Cells[4].Value.ToString();
+            txtPrice.Text = dgvInvoice.Rows[rowIndex].Cells[5].Value.ToString();
+        }
+
+        private void lblBatch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblQty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtQty_TextChanged(object sender, EventArgs e)
+        {
+            if (txtQty.Text != "" && txtRate.Text != "")
+            {
+                txtPrice.Text = TotalPrice(txtQty.Text, txtRate.Text);
+            }
+        }
+
+        private void txtRate_TextChanged(object sender, EventArgs e)
+        {
+            if (txtQty.Text != "" && txtRate.Text != "")
+            {
+                txtPrice.Text = TotalPrice(txtQty.Text, txtRate.Text);
+            }
+        }
+
+        private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Only integer value is allowed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
+        }
+
+        private void txtQty_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave.PerformClick();
+            }
+        }
+
+        private void txtRate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+               && !char.IsDigit(e.KeyChar)
+               && e.KeyChar != '.')
+            {
+                MessageBox.Show("Only numeric value is allowed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                e.Handled = true;
+            }
+        }
+
+        private void txtRate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave.PerformClick();
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (cmdConnection.State == ConnectionState.Closed)
+            {
+                cmdConnection.Open();
+            }
+            if (txtMedi.Text.Trim() == "" && txtQty.Text.Trim() == "" && txtBatch.Text.Trim() == "" && txtRate.Text.Trim() == "")
+            {
+                MessageBox.Show("All Fields are Required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMedi.Focus();
+            }
+
+            else if (txtMedi.Text.Trim() == "")
+            {
+                MessageBox.Show("NMedicine Name is Required.", "Medicine Name Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMedi.Focus();
+            }
+            else if (txtBatch.Text.Trim() == "")
+            {
+                MessageBox.Show("Batch No. is Required.", "Batch Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBatch.Focus();
+            }
+            else if (txtQty.Text.Trim() == "")
+            {
+                MessageBox.Show("Quantity is Required.", "Quantity Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtQty.Focus();
+            }
+
+            else if (txtRate.Text.Trim() == "")
+            {
+                MessageBox.Show("Rate is Required.", "Rate Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtRate.Focus();
+            }
+            else
+            {
+
+                try
+                {
+                    //cmdUpdate = new SqlCommand("UPDATE MedicineStock SET MedicineName = '" + txtMedi.Text.Trim() + "', BatchName = '" + txtBatch.Text.Trim() + "', Quantity = '" + txtQty.Text.Trim() + "', Rate = '" + txtRate.Text.Trim() + "' where ID = '" + txtID.Text.Trim() + "'", cmdConnection);
+                    //cmdUpdate.ExecuteNonQuery();
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                string strSrNo = txtSrNo.Text;
+                txtMedi.Text = "0";
+                txtQty.Clear();
+                txtSrNo.Text = Convert.ToString(Convert.ToInt32(strSrNo) + 1);
+                txtMedi.Focus();
+                txtPrice.Text = "0";
             }
         }
     }

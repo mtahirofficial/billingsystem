@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace Billing_System.User_Controls
 {
@@ -53,6 +54,11 @@ namespace Billing_System.User_Controls
                 string destinationFileName = System.IO.Path.Combine(installedPath, System.IO.Path.GetFileName(sourceFileName));
                 System.IO.File.Copy(sourceFileName, destinationFileName);
             }
+        }
+
+        private void Signup_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -114,6 +114,7 @@ namespace Billing_System
 
         private void lblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            helpers.forgotpass = "";
             login1.BringToFront();
             lblLogin.Visible = false;
             lblSignUp.Visible = true;
@@ -128,9 +129,9 @@ namespace Billing_System
 
         private void lblInvoice_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //shopInvoice1.ClearTextBoxes();
-            //shopInvoice1.medicineList.Clear();
-            shopInvoice1.BringToFront();
+            shopInvoice1.ClearTextBoxes();
+            shopInvoice1.medicineList.Clear();
+            shopInvoice2.BringToFront();
             lblLogin.Visible = false;
             lblSignUp.Visible = false;
         }
@@ -166,7 +167,7 @@ namespace Billing_System
         {
             home1.BringToFront();
             login1.BringToFront();
-            LoginInfo.LoggedUser = "";
+            helpers.LoggedUser = "";
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -188,7 +189,7 @@ namespace Billing_System
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (LoginInfo.LoggedUser != "")
+            if (helpers.LoggedUser != "")
             {
                 lblInvoice.Visible = true;
                 lblViewInvoice.Visible = true;
@@ -206,6 +207,10 @@ namespace Billing_System
                 lblSignout.Visible = false;
                 lblSignUp.Visible = true;
                 lblLogin.Visible = true;
+            }
+            if (helpers.forgotpass == "yes")
+            {
+                forgottPass1.BringToFront();
             }
         }
     }

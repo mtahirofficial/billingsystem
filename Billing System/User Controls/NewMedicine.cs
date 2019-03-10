@@ -145,12 +145,15 @@ namespace Billing_System.User_Controls
                 MessageBox.Show("Record is Saved.", "Aknowledgement", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             dgvMediList.DataSource = null;
+            medicineList.Clear();
+            txtSrNo.Text = "1";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ClearTextBoxes();
             txtSrNo.Text = "1";
+            medicineList.Clear();
             dgvMediList.DataSource = null;
 
         }

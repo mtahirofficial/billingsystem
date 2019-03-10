@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing.Printing;
+using System.IO;
 
 namespace Billing_System.User_Controls
 {
@@ -76,7 +78,7 @@ namespace Billing_System.User_Controls
                         if (objReader.Read())
                         {
                             //MessageBox.Show(this.Parent.Name);
-                            LoginInfo.LoggedUser = txtEmail.Text;
+                            helpers.LoggedUser = txtEmail.Text;
                             //MessageBox.Show(LoginInfo.LoggedUser);
                             this.SendToBack();
 
@@ -127,7 +129,9 @@ namespace Billing_System.User_Controls
 
         private void lblForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.SendToBack();
+            //this.SendToBack();
+            helpers.forgotpass = "yes";
         }
+
     }
 }

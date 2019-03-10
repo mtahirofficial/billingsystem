@@ -51,13 +51,15 @@
             this.btnMaximize = new DevComponents.DotNetBar.ButtonX();
             this.btnClose = new DevComponents.DotNetBar.ButtonX();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.viewStock1 = new Billing_System.User_Controls.ViewStock();
-            this.newMedicine1 = new Billing_System.User_Controls.NewMedicine();
-            this.home1 = new Billing_System.User_Controls.Home();
-            this.login1 = new Billing_System.User_Controls.Login();
             this.shopInvoice1 = new Billing_System.User_Controls.ShopInvoice();
-            this.viewInvioces1 = new Billing_System.User_Controls.ViewInvioces();
+            this.forgottPass1 = new Billing_System.User_Controls.ForgottPass();
+            this.login1 = new Billing_System.User_Controls.Login();
+            this.newMedicine1 = new Billing_System.User_Controls.NewMedicine();
             this.signup1 = new Billing_System.User_Controls.Signup();
+            this.viewInvioces1 = new Billing_System.User_Controls.ViewInvioces();
+            this.viewStock1 = new Billing_System.User_Controls.ViewStock();
+            this.home1 = new Billing_System.User_Controls.Home();
+            this.shopInvoice2 = new Billing_System.User_Controls.ShopInvoice();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuGradientPanel2.SuspendLayout();
@@ -398,42 +400,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // viewStock1
-            // 
-            this.viewStock1.BackColor = System.Drawing.Color.White;
-            this.viewStock1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewStock1.Location = new System.Drawing.Point(0, 85);
-            this.viewStock1.Name = "viewStock1";
-            this.viewStock1.Size = new System.Drawing.Size(1000, 553);
-            this.viewStock1.TabIndex = 25;
-            // 
-            // newMedicine1
-            // 
-            this.newMedicine1.BackColor = System.Drawing.Color.White;
-            this.newMedicine1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.newMedicine1.Location = new System.Drawing.Point(0, 85);
-            this.newMedicine1.Name = "newMedicine1";
-            this.newMedicine1.Size = new System.Drawing.Size(1000, 553);
-            this.newMedicine1.TabIndex = 24;
-            this.newMedicine1.Load += new System.EventHandler(this.newMedicine1_Load);
-            // 
-            // home1
-            // 
-            this.home1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.home1.Location = new System.Drawing.Point(0, 85);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(1000, 553);
-            this.home1.TabIndex = 23;
-            // 
-            // login1
-            // 
-            this.login1.BackColor = System.Drawing.Color.White;
-            this.login1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.login1.Location = new System.Drawing.Point(0, 85);
-            this.login1.Name = "login1";
-            this.login1.Size = new System.Drawing.Size(1000, 553);
-            this.login1.TabIndex = 22;
-            // 
             // shopInvoice1
             // 
             this.shopInvoice1.AutoScroll = true;
@@ -444,14 +410,32 @@
             this.shopInvoice1.Size = new System.Drawing.Size(1000, 553);
             this.shopInvoice1.TabIndex = 21;
             // 
-            // viewInvioces1
+            // forgottPass1
             // 
-            this.viewInvioces1.BackColor = System.Drawing.Color.White;
-            this.viewInvioces1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewInvioces1.Location = new System.Drawing.Point(0, 85);
-            this.viewInvioces1.Name = "viewInvioces1";
-            this.viewInvioces1.Size = new System.Drawing.Size(1000, 553);
-            this.viewInvioces1.TabIndex = 20;
+            this.forgottPass1.BackColor = System.Drawing.Color.White;
+            this.forgottPass1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.forgottPass1.Location = new System.Drawing.Point(0, 85);
+            this.forgottPass1.Name = "forgottPass1";
+            this.forgottPass1.Size = new System.Drawing.Size(1000, 553);
+            this.forgottPass1.TabIndex = 20;
+            // 
+            // login1
+            // 
+            this.login1.BackColor = System.Drawing.Color.White;
+            this.login1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.login1.Location = new System.Drawing.Point(0, 85);
+            this.login1.Name = "login1";
+            this.login1.Size = new System.Drawing.Size(1000, 553);
+            this.login1.TabIndex = 21;
+            // 
+            // newMedicine1
+            // 
+            this.newMedicine1.BackColor = System.Drawing.Color.White;
+            this.newMedicine1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newMedicine1.Location = new System.Drawing.Point(0, 85);
+            this.newMedicine1.Name = "newMedicine1";
+            this.newMedicine1.Size = new System.Drawing.Size(1000, 553);
+            this.newMedicine1.TabIndex = 22;
             // 
             // signup1
             // 
@@ -460,20 +444,57 @@
             this.signup1.Location = new System.Drawing.Point(0, 85);
             this.signup1.Name = "signup1";
             this.signup1.Size = new System.Drawing.Size(1000, 553);
-            this.signup1.TabIndex = 26;
+            this.signup1.TabIndex = 23;
+            // 
+            // viewInvioces1
+            // 
+            this.viewInvioces1.BackColor = System.Drawing.Color.White;
+            this.viewInvioces1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewInvioces1.Location = new System.Drawing.Point(0, 85);
+            this.viewInvioces1.Name = "viewInvioces1";
+            this.viewInvioces1.Size = new System.Drawing.Size(1000, 553);
+            this.viewInvioces1.TabIndex = 24;
+            // 
+            // viewStock1
+            // 
+            this.viewStock1.BackColor = System.Drawing.Color.White;
+            this.viewStock1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewStock1.Location = new System.Drawing.Point(0, 85);
+            this.viewStock1.Name = "viewStock1";
+            this.viewStock1.Size = new System.Drawing.Size(1000, 553);
+            this.viewStock1.TabIndex = 25;
+            // 
+            // home1
+            // 
+            this.home1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.home1.Location = new System.Drawing.Point(0, 85);
+            this.home1.Name = "home1";
+            this.home1.Size = new System.Drawing.Size(1000, 553);
+            this.home1.TabIndex = 26;
+            // 
+            // shopInvoice2
+            // 
+            this.shopInvoice2.AutoScroll = true;
+            this.shopInvoice2.BackColor = System.Drawing.Color.White;
+            this.shopInvoice2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shopInvoice2.Location = new System.Drawing.Point(0, 85);
+            this.shopInvoice2.Name = "shopInvoice2";
+            this.shopInvoice2.Size = new System.Drawing.Size(1000, 553);
+            this.shopInvoice2.TabIndex = 27;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 665);
-            this.Controls.Add(this.signup1);
-            this.Controls.Add(this.viewStock1);
-            this.Controls.Add(this.newMedicine1);
+            this.Controls.Add(this.shopInvoice2);
             this.Controls.Add(this.home1);
-            this.Controls.Add(this.login1);
-            this.Controls.Add(this.shopInvoice1);
+            this.Controls.Add(this.viewStock1);
             this.Controls.Add(this.viewInvioces1);
+            this.Controls.Add(this.signup1);
+            this.Controls.Add(this.newMedicine1);
+            this.Controls.Add(this.login1);
+            this.Controls.Add(this.forgottPass1);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.pnlHead);
@@ -512,15 +533,17 @@
         private System.Windows.Forms.LinkLabel lblSignUp;
         private System.Windows.Forms.LinkLabel lblLogin;
         private System.Windows.Forms.LinkLabel lblSignout;
-        private User_Controls.ViewInvioces viewInvioces1;
         private User_Controls.ShopInvoice shopInvoice1;
-        private User_Controls.Login login1;
-        private User_Controls.Home home1;
         private System.Windows.Forms.LinkLabel lblMedicineStock;
         private System.Windows.Forms.LinkLabel lblNewMedicine;
-        private User_Controls.NewMedicine newMedicine1;
-        private User_Controls.ViewStock viewStock1;
         private System.Windows.Forms.Timer timer1;
+        private User_Controls.ForgottPass forgottPass1;
+        private User_Controls.Login login1;
+        private User_Controls.NewMedicine newMedicine1;
         private User_Controls.Signup signup1;
+        private User_Controls.ViewInvioces viewInvioces1;
+        private User_Controls.ViewStock viewStock1;
+        private User_Controls.Home home1;
+        private User_Controls.ShopInvoice shopInvoice2;
     }
 }

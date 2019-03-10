@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Billing_System
 {
-    public static class LoginInfo
+    public static class helpers
     {
         public static string LoggedUser = "";
+        public static string forgotpass = "";
+
     }
 }

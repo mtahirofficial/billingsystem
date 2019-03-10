@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Billing_System
+
+namespace Billing_System.User_Controls
 {
-    public partial class ForgotPassword : Form
+    public partial class ForgottPass : UserControl
     {
-        public ForgotPassword()
+        public ForgottPass()
         {
             InitializeComponent();
         }
@@ -35,8 +36,6 @@ namespace Billing_System
             return points;
         }
         string code;
-
-
         private string GetRandomText()
         {
             StringBuilder randomText = new StringBuilder();
@@ -91,14 +90,14 @@ namespace Billing_System
             pbCaptcha.Image = Image.FromFile("e:/tempimage.bmp");
         }
 
-        private void pbCaptcha_Click(object sender, EventArgs e)
+        private void ForgottPass_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void ChangePass_Load(object sender, EventArgs e)
-        {
-
+            if (pbCaptcha.Image != null)
+            {
+                pbCaptcha.Image.Dispose();
+                code = "";
+            }
+            
             CreateImage();
         }
 
@@ -111,11 +110,22 @@ namespace Billing_System
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            pbCaptcha.Image.Dispose();
-            code = "";
-            //LoginForm login = new LoginForm();
-            //login.Show();
-            this.Hide();
+            //pbCaptcha.Image.Dispose();
+            //code = "";
+            txtCode.Clear();
+            txtPassword.Clear();
+        }
+
+        private void asd_Click(object sender, EventArgs e)
+        {
+            txtPassword.Focus();
+
+        }
+
+        private void lblDescription_Click(object sender, EventArgs e)
+        {
+            txtCode.Focus();
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -123,22 +133,14 @@ namespace Billing_System
             if (txtCode.Text == code.ToString())
             {
                 MessageBox.Show("Proceed");
-                Close();
+                //Close();
             }
             else
             {
                 MessageBox.Show("Incorrect entry");
             }
         }
-
-        private void lblPassword_Click(object sender, EventArgs e)
-        {
-            txtPassword.Focus();
-        }
-
-        private void txtDescription_Click(object sender, EventArgs e)
-        {
-            txtCode.Focus();
-        }
     }
+
+    
 }

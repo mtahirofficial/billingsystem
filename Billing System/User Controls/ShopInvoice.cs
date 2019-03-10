@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Billing_System.Model;
+using System.Drawing.Printing;
+using System.IO;
 
 namespace Billing_System.User_Controls
 {
@@ -264,7 +266,7 @@ namespace Billing_System.User_Controls
                             SqlCommand cmdUpdate = new SqlCommand("Update MedicineStock set Quantity = '"+ row.Cells[3].Value + "' where MedicineName = '"+ row.Cells[1].Value + "'", conConnection);
                             cmdUpdate.ExecuteNonQuery();
 
-                            MessageBox.Show("0:" + row.Cells[0].Value + "   1:" + row.Cells[1].Value + "   2:" + row.Cells[2].Value + "   3:" + row.Cells[3].Value + "   4:" + row.Cells[4].Value + "   5:" + row.Cells[5].Value + "   6:" + row.Cells[6].Value + "   7:" + row.Cells[7].Value, "Test DatagridView", MessageBoxButtons.OK);
+                            //MessageBox.Show("0:" + row.Cells[0].Value + "   1:" + row.Cells[1].Value + "   2:" + row.Cells[2].Value + "   3:" + row.Cells[3].Value + "   4:" + row.Cells[4].Value + "   5:" + row.Cells[5].Value + "   6:" + row.Cells[6].Value + "   7:" + row.Cells[7].Value, "Test DatagridView", MessageBoxButtons.OK);
                         }
                     }
                     SqlCommand cmdInsertCustomer = new SqlCommand("INSERT INTO ShopCustomer ([InvoiceNo], [CustomerName], [Mobile]) VALUES ('" + txtInvoice.Text + "', '" + txtName.Text + "','" + txtPhone.Text + "')", conConnection);
@@ -303,19 +305,37 @@ namespace Billing_System.User_Controls
                 {
                     conConnection.Close();
 
-             printPreviewDialog1.Document = printDocument1;
-             printPreviewDialog1.ShowDialog();
+                    printPreviewDialog1.Document = printDocument1;
+                    printPreviewDialog1.ShowDialog();
+
+                    string fileName = (string)(txtPhone.Text);
+                    string directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    
+
+                    printDocument1.PrinterSettings = new PrinterSettings()
+                    {
+                        // set the printer to 'Microsoft Print to PDF'
+                        PrinterName = "Microsoft Print to PDF",
+
+                        // tell the object this document will print to file
+                        PrintToFile = true,
+
+                        // set the filename to whatever you like (full path)
+                        PrintFileName = Path.Combine(directory, fileName + ".pdf"),
+                    };
+
+                    printDocument1.Print();
 
 
-            ClearTextBoxes();
-            txtName.Focus();
-            txtSrNo.Text = "1";
-            txtPrice.Text = "0";
-            txtAdvance.Text = "0";
-            txtBalance.Text = "0";
-            medicineList.Clear();
-            dgvMediList.DataSource = null;
-            lblTotalBill.Text = "0";
+                    ClearTextBoxes();
+                    txtName.Focus();
+                    txtSrNo.Text = "1";
+                    txtPrice.Text = "0";
+                    txtAdvance.Text = "0";
+                    txtBalance.Text = "0";
+                    medicineList.Clear();
+                    dgvMediList.DataSource = null;
+                    lblTotalBill.Text = "0";
                 }
 
             }
@@ -543,9 +563,14 @@ namespace Billing_System.User_Controls
         {
             if (e.Button == MouseButtons.Right)
             {
-                var ht = dgvMediList.HitTest(e.X, e.Y);
-                dgvMediList.Rows[ht.RowIndex].Selected = true;
-                menuDGV.Show(dgvMediList, e.X, e.Y);
+                if (dgvMediList.Rows.Count > 0)
+                {
+                    var ht = dgvMediList.HitTest(e.X, e.Y);
+                    dgvMediList.ClearSelection();
+                    dgvMediList.Rows[ht.RowIndex].Selected = true;
+                    menuDGV.Show(dgvMediList, e.X, e.Y);
+                }
+
             }
         }
 
@@ -618,9 +643,9 @@ namespace Billing_System.User_Controls
 
                         if (index == -1)
                         {
-                            MessageBox.Show("if : Index of Item = " + index);
+                            //MessageBox.Show("if : Index of Item = " + index);
                             int remainingStock = Convert.ToInt32(txtStock.Text) - Convert.ToInt32(txtQty.Text);
-                            txtStock.Text = remainingStock.ToString();
+                            //txtStock.Text = remainingStock.ToString();
 
 
 
@@ -629,7 +654,7 @@ namespace Billing_System.User_Controls
                                 SrNo = Convert.ToInt32(txtSrNo.Text),
                                 MedicineName = cbMediName.Text,
                                 Batch = txtBatch.Text,
-                                Stock = Convert.ToInt32(txtStock.Text),
+                                Stock = remainingStock,
                                 Quantity = Convert.ToInt32(txtQty.Text),
                                 Rate = Convert.ToDecimal(txtRate.Text),
                                 Price = Convert.ToDecimal(txtPrice.Text),
@@ -642,7 +667,7 @@ namespace Billing_System.User_Controls
                         }
                         else
                         {
-                            MessageBox.Show("else : Index of Item = " + index);
+                            //MessageBox.Show("else : Index of Item = " + index);
                             medicineList[index].Quantity += Convert.ToInt32(txtQty.Text);
                             dgvMediList.DataSource = null;
                             dgvMediList.DataSource = medicineList;
@@ -723,10 +748,10 @@ namespace Billing_System.User_Controls
                 txtStock.Text = reader["Quantity"].ToString();
                 txtRate.Text = reader["Rate"].ToString();
 
-                if (Convert.ToInt32(txtStock.Text) <= 5)
-                {
-                    MessageBox.Show("Stock is least", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                //if (Convert.ToInt32(txtStock.Text) <= 5)
+                //{
+                //    MessageBox.Show("Stock is least", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
             }
             reader.Close();
             conConnection.Close();
@@ -836,9 +861,14 @@ namespace Billing_System.User_Controls
 
         private void txtStock_TextChanged(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(txtStock.Text) <= 5)
+            //this.
+
+            if (txtStock.Text != "")
             {
-                MessageBox.Show("Stock is least", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Convert.ToInt32(txtStock.Text) <= 5)
+                {
+                    MessageBox.Show("Stock is least", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }

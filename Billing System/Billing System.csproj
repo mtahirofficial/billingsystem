@@ -84,7 +84,7 @@
     <Compile Include="ForgotPassword.Designer.cs">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginInfo.cs" />
+    <Compile Include="helpers.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,32 +94,14 @@
     <Compile Include="Model\MedicineItems.cs" />
     <Compile Include="Model\StockItems.cs" />
     <Compile Include="SystemFunctions.cs" />
-    <Compile Include="Dashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ShopInvoice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ShopInvoice.Designer.cs">
-      <DependentUpon>ShopInvoice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SupplyInvoice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SupplyInvoice.Designer.cs">
-      <DependentUpon>SupplyInvoice.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User Controls\ForgottPass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ForgottPass.Designer.cs">
+      <DependentUpon>ForgottPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,20 +147,8 @@
     <EmbeddedResource Include="ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ShopInvoice.resx">
-      <DependentUpon>ShopInvoice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SupplyInvoice.resx">
-      <DependentUpon>SupplyInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -190,6 +160,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="User Controls\ForgottPass.resx">
+      <DependentUpon>ForgottPass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>

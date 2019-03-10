@@ -269,11 +269,7 @@ D:\Projects\Billing System\Billing System\bin\Debug\EntityFramework.SqlServer.xm
 D:\Projects\Billing System\Billing System\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 D:\Projects\Billing System\Billing System\obj\Debug\Billing System.csprojAssemblyReference.cache
 D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.ForgotPassword.resources
-D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.Dashboard.resources
-D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.LoginForm.resources
 D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.MainForm.resources
-D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.ShopInvoice.resources
-D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.SupplyInvoice.resources
 D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.Properties.Resources.resources
 D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.User_Controls.Home.resources
 D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.User_Controls.Login.resources
@@ -287,3 +283,5 @@ D:\Projects\Billing System\Billing System\obj\Debug\Billing System.csproj.CoreCo
 D:\Projects\Billing System\Billing System\obj\Debug\Billing System.csproj.CopyComplete
 D:\Projects\Billing System\Billing System\obj\Debug\Billing System.exe
 D:\Projects\Billing System\Billing System\obj\Debug\Billing System.pdb
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.User_Controls.ForgottPass.resources
+D:\Projects\Billing System\Billing System\bin\Debug\MetroFramework.dll
