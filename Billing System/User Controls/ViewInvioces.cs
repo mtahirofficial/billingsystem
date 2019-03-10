@@ -351,8 +351,8 @@ namespace Billing_System.User_Controls
             //invoiceNo = row.Cells[0].Value.ToString();
             txtSrNo.Text = dgvInvoice.Rows[rowIndex].Cells[0].Value.ToString();
             txtMedi.Text = dgvInvoice.Rows[rowIndex].Cells[1].Value.ToString();
-            txtBatch.Text = dgvInvoice.Rows[rowIndex].Cells[2].Value.ToString();
-            txtQty.Text = dgvInvoice.Rows[rowIndex].Cells[3].Value.ToString();
+            txtQty.Text = dgvInvoice.Rows[rowIndex].Cells[2].Value.ToString();
+            txtBatch.Text = dgvInvoice.Rows[rowIndex].Cells[3].Value.ToString();
             txtRate.Text = dgvInvoice.Rows[rowIndex].Cells[4].Value.ToString();
             txtPrice.Text = dgvInvoice.Rows[rowIndex].Cells[5].Value.ToString();
         }
@@ -469,12 +469,12 @@ namespace Billing_System.User_Controls
                     MessageBox.Show(ex.Message);
                 }
 
-                string strSrNo = txtSrNo.Text;
-                txtMedi.Text = "0";
-                txtQty.Clear();
-                txtSrNo.Text = Convert.ToString(Convert.ToInt32(strSrNo) + 1);
-                txtMedi.Focus();
-                txtPrice.Text = "0";
+                //string strSrNo = txtSrNo.Text;
+                //txtMedi.Text = "0";
+                //txtQty.Clear();
+                //txtSrNo.Text = Convert.ToString(Convert.ToInt32(strSrNo) + 1);
+                //txtMedi.Focus();
+                //txtPrice.Text = "0";
             }
         }
     }
