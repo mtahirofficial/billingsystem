@@ -54,10 +54,10 @@
             this.txtEmail.FocusHighlightColor = System.Drawing.Color.White;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(201)))), ((int)(((byte)(233)))));
-            this.txtEmail.Location = new System.Drawing.Point(244, 155);
+            this.txtEmail.Location = new System.Drawing.Point(272, 155);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PreventEnterBeep = true;
-            this.txtEmail.Size = new System.Drawing.Size(516, 29);
+            this.txtEmail.Size = new System.Drawing.Size(460, 29);
             this.txtEmail.TabIndex = 3;
             this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmail_KeyDown);
             // 
@@ -73,11 +73,11 @@
             this.txtPassword.FocusHighlightColor = System.Drawing.Color.White;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(201)))), ((int)(((byte)(233)))));
-            this.txtPassword.Location = new System.Drawing.Point(244, 228);
+            this.txtPassword.Location = new System.Drawing.Point(272, 228);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.PreventEnterBeep = true;
-            this.txtPassword.Size = new System.Drawing.Size(516, 29);
+            this.txtPassword.Size = new System.Drawing.Size(460, 29);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
@@ -90,9 +90,9 @@
             this.btnLogin.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnLogin.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(244, 292);
+            this.btnLogin.Location = new System.Drawing.Point(272, 292);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(516, 28);
+            this.btnLogin.Size = new System.Drawing.Size(460, 28);
             this.btnLogin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
@@ -101,13 +101,12 @@
             // 
             // lblLogin
             // 
-            this.lblLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblLogin.Font = new System.Drawing.Font("Segoe UI", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(201)))), ((int)(((byte)(233)))));
-            this.lblLogin.Location = new System.Drawing.Point(425, 27);
+            this.lblLogin.Location = new System.Drawing.Point(0, 0);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(151, 63);
+            this.lblLogin.Size = new System.Drawing.Size(1000, 94);
             this.lblLogin.TabIndex = 6;
             this.lblLogin.Text = "Login";
             this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -115,7 +114,7 @@
             // lblEmail
             // 
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(240, 116);
+            this.lblEmail.Location = new System.Drawing.Point(268, 116);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(141, 36);
             this.lblEmail.TabIndex = 7;
@@ -125,7 +124,7 @@
             // lblPassword
             // 
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(240, 189);
+            this.lblPassword.Location = new System.Drawing.Point(268, 189);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(173, 36);
             this.lblPassword.TabIndex = 8;
@@ -138,9 +137,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblForgotPass.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgotPass.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lblForgotPass.Location = new System.Drawing.Point(434, 323);
+            this.lblForgotPass.Location = new System.Drawing.Point(462, 323);
             this.lblForgotPass.Name = "lblForgotPass";
-            this.lblForgotPass.Size = new System.Drawing.Size(133, 33);
+            this.lblForgotPass.Size = new System.Drawing.Size(77, 33);
             this.lblForgotPass.TabIndex = 10;
             this.lblForgotPass.TabStop = true;
             this.lblForgotPass.Text = "Forgot Password ?";
@@ -151,7 +150,7 @@
             // 
             this.picBoxHide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBoxHide.Image = ((System.Drawing.Image)(resources.GetObject("picBoxHide.Image")));
-            this.picBoxHide.Location = new System.Drawing.Point(733, 230);
+            this.picBoxHide.Location = new System.Drawing.Point(705, 230);
             this.picBoxHide.Name = "picBoxHide";
             this.picBoxHide.Size = new System.Drawing.Size(24, 24);
             this.picBoxHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -163,7 +162,7 @@
             // 
             this.picBoxShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBoxShow.Image = ((System.Drawing.Image)(resources.GetObject("picBoxShow.Image")));
-            this.picBoxShow.Location = new System.Drawing.Point(733, 230);
+            this.picBoxShow.Location = new System.Drawing.Point(705, 230);
             this.picBoxShow.Name = "picBoxShow";
             this.picBoxShow.Size = new System.Drawing.Size(24, 24);
             this.picBoxShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -175,6 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.picBoxShow);
             this.Controls.Add(this.lblForgotPass);

@@ -16,6 +16,19 @@ namespace Billing_System.User_Controls
 {
     public partial class Login : UserControl
     {
+        private static Login _instance;
+        public static Login Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Login();
+                }
+                return _instance;
+            }
+        }
+
         public Login()
         {
             InitializeComponent();
@@ -80,7 +93,10 @@ namespace Billing_System.User_Controls
                             //MessageBox.Show(this.Parent.Name);
                             helpers.LoggedUser = txtEmail.Text;
                             //MessageBox.Show(LoginInfo.LoggedUser);
+                            txtEmail.Clear();
+                            txtPassword.Clear();
                             this.SendToBack();
+
 
 
                         }
@@ -90,8 +106,7 @@ namespace Billing_System.User_Controls
                         }
                         objReader.Close();
                     }
-                    txtEmail.Clear();
-                    txtPassword.Clear();
+                    
                 }
                 catch (Exception ex)
                 {

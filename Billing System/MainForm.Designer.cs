@@ -40,31 +40,20 @@
             this.lblNewMedicine = new System.Windows.Forms.LinkLabel();
             this.lblSignout = new System.Windows.Forms.LinkLabel();
             this.lblLogin = new System.Windows.Forms.LinkLabel();
-            this.lblSignUp = new System.Windows.Forms.LinkLabel();
             this.lblViewInvoice = new System.Windows.Forms.LinkLabel();
             this.lblInvoice = new System.Windows.Forms.LinkLabel();
-            this.pnlHead = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.picBoxLogo = new System.Windows.Forms.PictureBox();
-            this.lblCompanyName = new DevComponents.DotNetBar.LabelX();
-            this.btnMinimize = new DevComponents.DotNetBar.ButtonX();
-            this.btnRestore = new DevComponents.DotNetBar.ButtonX();
-            this.btnMaximize = new DevComponents.DotNetBar.ButtonX();
-            this.btnClose = new DevComponents.DotNetBar.ButtonX();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.shopInvoice1 = new Billing_System.User_Controls.ShopInvoice();
-            this.forgottPass1 = new Billing_System.User_Controls.ForgottPass();
+            this.controlPanel = new System.Windows.Forms.Panel();
+            this.home1 = new Billing_System.User_Controls.Home();
             this.login1 = new Billing_System.User_Controls.Login();
             this.newMedicine1 = new Billing_System.User_Controls.NewMedicine();
-            this.signup1 = new Billing_System.User_Controls.Signup();
+            this.shopInvoice1 = new Billing_System.User_Controls.ShopInvoice();
             this.viewInvioces1 = new Billing_System.User_Controls.ViewInvioces();
             this.viewStock1 = new Billing_System.User_Controls.ViewStock();
-            this.home1 = new Billing_System.User_Controls.Home();
-            this.shopInvoice2 = new Billing_System.User_Controls.ShopInvoice();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuGradientPanel2.SuspendLayout();
-            this.pnlHead.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
+            this.controlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel1
@@ -155,7 +144,6 @@
             this.bunifuGradientPanel2.Controls.Add(this.lblNewMedicine);
             this.bunifuGradientPanel2.Controls.Add(this.lblSignout);
             this.bunifuGradientPanel2.Controls.Add(this.lblLogin);
-            this.bunifuGradientPanel2.Controls.Add(this.lblSignUp);
             this.bunifuGradientPanel2.Controls.Add(this.lblViewInvoice);
             this.bunifuGradientPanel2.Controls.Add(this.lblInvoice);
             this.bunifuGradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -163,7 +151,7 @@
             this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.DeepSkyBlue;
             this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.LightGray;
             this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.LightGray;
-            this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 24);
+            this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             this.bunifuGradientPanel2.Quality = 10;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(1000, 61);
@@ -171,6 +159,7 @@
             // 
             // lblMedicineStock
             // 
+            this.lblMedicineStock.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.lblMedicineStock.BackColor = System.Drawing.Color.Transparent;
             this.lblMedicineStock.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblMedicineStock.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,6 +176,7 @@
             // 
             // lblNewMedicine
             // 
+            this.lblNewMedicine.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.lblNewMedicine.BackColor = System.Drawing.Color.Transparent;
             this.lblNewMedicine.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblNewMedicine.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,12 +193,13 @@
             // 
             // lblSignout
             // 
+            this.lblSignout.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.lblSignout.BackColor = System.Drawing.Color.Transparent;
             this.lblSignout.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblSignout.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignout.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblSignout.LinkColor = System.Drawing.Color.White;
-            this.lblSignout.Location = new System.Drawing.Point(745, 0);
+            this.lblSignout.Location = new System.Drawing.Point(830, 0);
             this.lblSignout.Name = "lblSignout";
             this.lblSignout.Size = new System.Drawing.Size(85, 61);
             this.lblSignout.TabIndex = 20;
@@ -219,12 +210,13 @@
             // 
             // lblLogin
             // 
+            this.lblLogin.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblLogin.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblLogin.LinkColor = System.Drawing.Color.White;
-            this.lblLogin.Location = new System.Drawing.Point(830, 0);
+            this.lblLogin.Location = new System.Drawing.Point(915, 0);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(85, 61);
             this.lblLogin.TabIndex = 0;
@@ -233,24 +225,9 @@
             this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogin_LinkClicked);
             // 
-            // lblSignUp
-            // 
-            this.lblSignUp.BackColor = System.Drawing.Color.Transparent;
-            this.lblSignUp.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblSignUp.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignUp.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lblSignUp.LinkColor = System.Drawing.Color.White;
-            this.lblSignUp.Location = new System.Drawing.Point(915, 0);
-            this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(85, 61);
-            this.lblSignUp.TabIndex = 1;
-            this.lblSignUp.TabStop = true;
-            this.lblSignUp.Text = "Signup";
-            this.lblSignUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSignUp_LinkClicked);
-            // 
             // lblViewInvoice
             // 
+            this.lblViewInvoice.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.lblViewInvoice.BackColor = System.Drawing.Color.Transparent;
             this.lblViewInvoice.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblViewInvoice.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -267,6 +244,7 @@
             // 
             // lblInvoice
             // 
+            this.lblInvoice.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.lblInvoice.BackColor = System.Drawing.Color.Transparent;
             this.lblInvoice.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblInvoice.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -281,247 +259,110 @@
             this.lblInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblInvoice.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblInvoice_LinkClicked);
             // 
-            // pnlHead
-            // 
-            this.pnlHead.BackColor = System.Drawing.Color.Snow;
-            this.pnlHead.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlHead.BackgroundImage")));
-            this.pnlHead.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlHead.Controls.Add(this.picBoxLogo);
-            this.pnlHead.Controls.Add(this.lblCompanyName);
-            this.pnlHead.Controls.Add(this.btnMinimize);
-            this.pnlHead.Controls.Add(this.btnRestore);
-            this.pnlHead.Controls.Add(this.btnMaximize);
-            this.pnlHead.Controls.Add(this.btnClose);
-            this.pnlHead.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHead.GradientBottomLeft = System.Drawing.Color.White;
-            this.pnlHead.GradientBottomRight = System.Drawing.Color.White;
-            this.pnlHead.GradientTopLeft = System.Drawing.Color.White;
-            this.pnlHead.GradientTopRight = System.Drawing.Color.White;
-            this.pnlHead.Location = new System.Drawing.Point(0, 0);
-            this.pnlHead.Name = "pnlHead";
-            this.pnlHead.Quality = 10;
-            this.pnlHead.Size = new System.Drawing.Size(1000, 24);
-            this.pnlHead.TabIndex = 6;
-            this.pnlHead.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlHead_MouseDown);
-            this.pnlHead.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlHead_MouseMove);
-            // 
-            // picBoxLogo
-            // 
-            this.picBoxLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxLogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLogo.Image")));
-            this.picBoxLogo.Location = new System.Drawing.Point(0, 0);
-            this.picBoxLogo.Name = "picBoxLogo";
-            this.picBoxLogo.Size = new System.Drawing.Size(24, 24);
-            this.picBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxLogo.TabIndex = 7;
-            this.picBoxLogo.TabStop = false;
-            // 
-            // lblCompanyName
-            // 
-            this.lblCompanyName.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.lblCompanyName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblCompanyName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyName.Location = new System.Drawing.Point(25, 0);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(145, 24);
-            this.lblCompanyName.TabIndex = 7;
-            this.lblCompanyName.Text = "Zahid Medicine Company";
-            this.lblCompanyName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblCompanyName_MouseDown);
-            this.lblCompanyName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblCompanyName_MouseMove);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(904, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.ShowSubItems = false;
-            this.btnMinimize.Size = new System.Drawing.Size(24, 24);
-            this.btnMinimize.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnMinimize.TabIndex = 16;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnRestore.BackColor = System.Drawing.Color.Transparent;
-            this.btnRestore.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
-            this.btnRestore.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRestore.Image = ((System.Drawing.Image)(resources.GetObject("btnRestore.Image")));
-            this.btnRestore.Location = new System.Drawing.Point(928, 0);
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.ShowSubItems = false;
-            this.btnRestore.Size = new System.Drawing.Size(24, 24);
-            this.btnRestore.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnRestore.TabIndex = 18;
-            this.btnRestore.Visible = false;
-            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximize.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
-            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(952, 0);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.ShowSubItems = false;
-            this.btnMaximize.Size = new System.Drawing.Size(24, 24);
-            this.btnMaximize.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnMaximize.TabIndex = 17;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(976, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.ShowSubItems = false;
-            this.btnClose.Size = new System.Drawing.Size(24, 24);
-            this.btnClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClose.TabIndex = 7;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // controlPanel
+            // 
+            this.controlPanel.AutoScroll = true;
+            this.controlPanel.Controls.Add(this.home1);
+            this.controlPanel.Controls.Add(this.login1);
+            this.controlPanel.Controls.Add(this.newMedicine1);
+            this.controlPanel.Controls.Add(this.shopInvoice1);
+            this.controlPanel.Controls.Add(this.viewInvioces1);
+            this.controlPanel.Controls.Add(this.viewStock1);
+            this.controlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlPanel.Location = new System.Drawing.Point(0, 61);
+            this.controlPanel.Name = "controlPanel";
+            this.controlPanel.Size = new System.Drawing.Size(1000, 577);
+            this.controlPanel.TabIndex = 20;
+            // 
+            // home1
+            // 
+            this.home1.AutoScroll = true;
+            this.home1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.home1.Location = new System.Drawing.Point(0, 0);
+            this.home1.Name = "home1";
+            this.home1.Size = new System.Drawing.Size(1000, 577);
+            this.home1.TabIndex = 7;
+            // 
+            // login1
+            // 
+            this.login1.AutoScroll = true;
+            this.login1.BackColor = System.Drawing.Color.White;
+            this.login1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.login1.Location = new System.Drawing.Point(0, 0);
+            this.login1.Name = "login1";
+            this.login1.Size = new System.Drawing.Size(1000, 577);
+            this.login1.TabIndex = 5;
+            // 
+            // newMedicine1
+            // 
+            this.newMedicine1.AutoScroll = true;
+            this.newMedicine1.BackColor = System.Drawing.Color.White;
+            this.newMedicine1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newMedicine1.Location = new System.Drawing.Point(0, 0);
+            this.newMedicine1.Name = "newMedicine1";
+            this.newMedicine1.Size = new System.Drawing.Size(1000, 577);
+            this.newMedicine1.TabIndex = 4;
             // 
             // shopInvoice1
             // 
             this.shopInvoice1.AutoScroll = true;
             this.shopInvoice1.BackColor = System.Drawing.Color.White;
             this.shopInvoice1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shopInvoice1.Location = new System.Drawing.Point(0, 85);
+            this.shopInvoice1.Location = new System.Drawing.Point(0, 0);
             this.shopInvoice1.Name = "shopInvoice1";
-            this.shopInvoice1.Size = new System.Drawing.Size(1000, 553);
-            this.shopInvoice1.TabIndex = 21;
-            // 
-            // forgottPass1
-            // 
-            this.forgottPass1.BackColor = System.Drawing.Color.White;
-            this.forgottPass1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.forgottPass1.Location = new System.Drawing.Point(0, 85);
-            this.forgottPass1.Name = "forgottPass1";
-            this.forgottPass1.Size = new System.Drawing.Size(1000, 553);
-            this.forgottPass1.TabIndex = 20;
-            // 
-            // login1
-            // 
-            this.login1.BackColor = System.Drawing.Color.White;
-            this.login1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.login1.Location = new System.Drawing.Point(0, 85);
-            this.login1.Name = "login1";
-            this.login1.Size = new System.Drawing.Size(1000, 553);
-            this.login1.TabIndex = 21;
-            // 
-            // newMedicine1
-            // 
-            this.newMedicine1.BackColor = System.Drawing.Color.White;
-            this.newMedicine1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.newMedicine1.Location = new System.Drawing.Point(0, 85);
-            this.newMedicine1.Name = "newMedicine1";
-            this.newMedicine1.Size = new System.Drawing.Size(1000, 553);
-            this.newMedicine1.TabIndex = 22;
-            // 
-            // signup1
-            // 
-            this.signup1.BackColor = System.Drawing.Color.White;
-            this.signup1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.signup1.Location = new System.Drawing.Point(0, 85);
-            this.signup1.Name = "signup1";
-            this.signup1.Size = new System.Drawing.Size(1000, 553);
-            this.signup1.TabIndex = 23;
+            this.shopInvoice1.Size = new System.Drawing.Size(1000, 577);
+            this.shopInvoice1.TabIndex = 3;
             // 
             // viewInvioces1
             // 
+            this.viewInvioces1.AutoScroll = true;
             this.viewInvioces1.BackColor = System.Drawing.Color.White;
             this.viewInvioces1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewInvioces1.Location = new System.Drawing.Point(0, 85);
+            this.viewInvioces1.Location = new System.Drawing.Point(0, 0);
             this.viewInvioces1.Name = "viewInvioces1";
-            this.viewInvioces1.Size = new System.Drawing.Size(1000, 553);
-            this.viewInvioces1.TabIndex = 24;
+            this.viewInvioces1.Size = new System.Drawing.Size(1000, 577);
+            this.viewInvioces1.TabIndex = 1;
             // 
             // viewStock1
             // 
+            this.viewStock1.AutoScroll = true;
             this.viewStock1.BackColor = System.Drawing.Color.White;
             this.viewStock1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewStock1.Location = new System.Drawing.Point(0, 85);
+            this.viewStock1.Location = new System.Drawing.Point(0, 0);
             this.viewStock1.Name = "viewStock1";
-            this.viewStock1.Size = new System.Drawing.Size(1000, 553);
-            this.viewStock1.TabIndex = 25;
-            // 
-            // home1
-            // 
-            this.home1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.home1.Location = new System.Drawing.Point(0, 85);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(1000, 553);
-            this.home1.TabIndex = 26;
-            // 
-            // shopInvoice2
-            // 
-            this.shopInvoice2.AutoScroll = true;
-            this.shopInvoice2.BackColor = System.Drawing.Color.White;
-            this.shopInvoice2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shopInvoice2.Location = new System.Drawing.Point(0, 85);
-            this.shopInvoice2.Name = "shopInvoice2";
-            this.shopInvoice2.Size = new System.Drawing.Size(1000, 553);
-            this.shopInvoice2.TabIndex = 27;
+            this.viewStock1.Size = new System.Drawing.Size(1000, 577);
+            this.viewStock1.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 665);
-            this.Controls.Add(this.shopInvoice2);
-            this.Controls.Add(this.home1);
-            this.Controls.Add(this.viewStock1);
-            this.Controls.Add(this.viewInvioces1);
-            this.Controls.Add(this.signup1);
-            this.Controls.Add(this.newMedicine1);
-            this.Controls.Add(this.login1);
-            this.Controls.Add(this.forgottPass1);
+            this.Controls.Add(this.controlPanel);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.bunifuGradientPanel2);
-            this.Controls.Add(this.pnlHead);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(825, 680);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "Zahid Medicine Company";
             this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.bunifuGradientPanel2.ResumeLayout(false);
-            this.pnlHead.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
+            this.controlPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DevComponents.DotNetBar.ButtonX btnClose;
-        private DevComponents.DotNetBar.ButtonX btnMinimize;
-        private DevComponents.DotNetBar.ButtonX btnMaximize;
-        private DevComponents.DotNetBar.ButtonX btnRestore;
-        private Bunifu.Framework.UI.BunifuGradientPanel pnlHead;
-        private DevComponents.DotNetBar.LabelX lblCompanyName;
-        private System.Windows.Forms.PictureBox picBoxLogo;
         private DevComponents.DotNetBar.LabelX labelX1;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -530,20 +371,17 @@
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
         private System.Windows.Forms.LinkLabel lblInvoice;
         private System.Windows.Forms.LinkLabel lblViewInvoice;
-        private System.Windows.Forms.LinkLabel lblSignUp;
         private System.Windows.Forms.LinkLabel lblLogin;
         private System.Windows.Forms.LinkLabel lblSignout;
-        private User_Controls.ShopInvoice shopInvoice1;
         private System.Windows.Forms.LinkLabel lblMedicineStock;
         private System.Windows.Forms.LinkLabel lblNewMedicine;
         private System.Windows.Forms.Timer timer1;
-        private User_Controls.ForgottPass forgottPass1;
+        private System.Windows.Forms.Panel controlPanel;
+        private User_Controls.Home home1;
         private User_Controls.Login login1;
         private User_Controls.NewMedicine newMedicine1;
-        private User_Controls.Signup signup1;
+        private User_Controls.ShopInvoice shopInvoice1;
         private User_Controls.ViewInvioces viewInvioces1;
         private User_Controls.ViewStock viewStock1;
-        private User_Controls.Home home1;
-        private User_Controls.ShopInvoice shopInvoice2;
     }
 }

@@ -13,6 +13,18 @@ namespace Billing_System.User_Controls
 {
     public partial class ViewStock : UserControl
     {
+        private static ViewStock _instance;
+        public static ViewStock Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ViewStock();
+                }
+                return _instance;
+            }
+        }
         public ViewStock()
         {
             InitializeComponent();
@@ -164,15 +176,16 @@ namespace Billing_System.User_Controls
                 deleteToolStripMenuItem.PerformClick();
             }
         }
-
+        static string oldQuantity;
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //int rowIndex = dgvMediList.CurrentCell.RowIndex;
+            btnUpdate.Enabled = true;
             int rowIndex = dgvMediList.SelectedRows[0].Index;
             txtID.Text = dgvMediList.Rows[rowIndex].Cells[0].Value.ToString();
             txtMedi.Text = dgvMediList.Rows[rowIndex].Cells[1].Value.ToString();
             txtBatch.Text = dgvMediList.Rows[rowIndex].Cells[2].Value.ToString();
-            txtQty.Text = dgvMediList.Rows[rowIndex].Cells[3].Value.ToString();
+            txtQty.Text = oldQuantity = dgvMediList.Rows[rowIndex].Cells[3].Value.ToString();
             txtRate.Text = dgvMediList.Rows[rowIndex].Cells[4].Value.ToString();
             dgvMediList.ClearSelection();
             
@@ -204,6 +217,7 @@ namespace Billing_System.User_Controls
                 dgvMediList.DataSource = null;
                 txtMediName.Focus();
             }
+            btnUpdate.Enabled = false;
             reader.Close();
             ClearTextBoxes();
         }

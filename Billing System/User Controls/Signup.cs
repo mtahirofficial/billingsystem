@@ -13,6 +13,18 @@ namespace Billing_System.User_Controls
 {
     public partial class Signup : UserControl
     {
+        private static Signup _instance;
+        public static Signup Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Signup();
+                }
+                return _instance;
+            }
+        }
         public Signup()
         {
             InitializeComponent();

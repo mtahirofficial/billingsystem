@@ -12,6 +12,18 @@ namespace Billing_System.User_Controls
 {
     public partial class Home : UserControl
     {
+        private static Home _instance;
+        public static Home Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Home();
+                }
+                return _instance;
+            }
+        }
         public Home()
         {
             InitializeComponent();

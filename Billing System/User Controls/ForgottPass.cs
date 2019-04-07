@@ -15,6 +15,18 @@ namespace Billing_System.User_Controls
 {
     public partial class ForgottPass : UserControl
     {
+        private static ForgottPass _instance;
+        public static ForgottPass Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ForgottPass();
+                }
+                return _instance;
+            }
+        }
         public ForgottPass()
         {
             InitializeComponent();
@@ -69,12 +81,13 @@ namespace Billing_System.User_Controls
                 counter += 20;
             }
             DrawRandomLines(g);
-            if (File.Exists("e:/tempimage.bmp"))
+            if (File.Exists("E:/tempimage.bmp"))
             {
+
                 try
                 {
-                    File.Delete("e:/tempimage.bmp");
-                    bitmap.Save("e:/tempimage.bmp");
+                    File.Delete("E:/tempimage.bmp");
+                    bitmap.Save("E:/tempimage.bmp");
                 }
                 catch (Exception ex)
                 {
@@ -83,11 +96,11 @@ namespace Billing_System.User_Controls
             }
             else
             {
-                bitmap.Save("e:/tempimage.bmp");
+                bitmap.Save("E:/tempimage.bmp");
             }
             g.Dispose();
             bitmap.Dispose();
-            pbCaptcha.Image = Image.FromFile("e:/tempimage.bmp");
+            pbCaptcha.Image = Image.FromFile("E:/tempimage.bmp");
         }
 
         private void ForgottPass_Load(object sender, EventArgs e)

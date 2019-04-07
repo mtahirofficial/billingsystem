@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Billing_System.User_Controls;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace Billing_System
 {
@@ -17,21 +19,22 @@ namespace Billing_System
         public MainForm()
         {
             InitializeComponent();
+
         }
         Point lastPoint;
-
+        Random rndm = new Random();
         private void btnMaximize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            btnMaximize.Visible = false;
-            btnRestore.Visible = true;
+            //btnMaximize.Visible = false;
+            //btnRestore.Visible = true;
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            btnRestore.Visible = false;
-            btnMaximize.Visible = true;
+            //btnRestore.Visible = false;
+            //btnMaximize.Visible = true;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -51,30 +54,30 @@ namespace Billing_System
 
         private void MainForm_Deactivate(object sender, EventArgs e)
         {
-            pnlHead.GradientBottomLeft = Color.White;
-            pnlHead.GradientBottomRight = Color.White;
-            pnlHead.GradientTopLeft = Color.White;
-            pnlHead.GradientTopRight = Color.White;
-            btnClose.BackColor = Color.White;
-            btnMaximize.BackColor = Color.White;
-            btnMinimize.BackColor = Color.White;
-            btnRestore.BackColor = Color.White;
-            picBoxLogo.BackColor = Color.White;
-            lblCompanyName.BackColor = Color.White; 
+            //pnlHead.GradientBottomLeft = Color.White;
+            //pnlHead.GradientBottomRight = Color.White;
+            //pnlHead.GradientTopLeft = Color.White;
+            //pnlHead.GradientTopRight = Color.White;
+            //btnClose.BackColor = Color.White;
+            //btnMaximize.BackColor = Color.White;
+            //btnMinimize.BackColor = Color.White;
+            //btnRestore.BackColor = Color.White;
+            //picBoxLogo.BackColor = Color.White;
+            //lblCompanyName.BackColor = Color.White; 
         }
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            pnlHead.GradientBottomLeft = Color.Gainsboro;
-            pnlHead.GradientBottomRight = Color.Gainsboro;
-            pnlHead.GradientTopLeft = Color.Gainsboro;
-            pnlHead.GradientTopRight = Color.Gainsboro;
-            btnClose.BackColor = Color.Gainsboro;
-            btnMaximize.BackColor = Color.Gainsboro;
-            btnMinimize.BackColor = Color.Gainsboro;
-            btnRestore.BackColor = Color.Gainsboro;
-            picBoxLogo.BackColor = Color.Gainsboro;
-            lblCompanyName.BackColor = Color.Gainsboro;
+            //pnlHead.GradientBottomLeft = Color.Gainsboro;
+            //pnlHead.GradientBottomRight = Color.Gainsboro;
+            //pnlHead.GradientTopLeft = Color.Gainsboro;
+            //pnlHead.GradientTopRight = Color.Gainsboro;
+            //btnClose.BackColor = Color.Gainsboro;
+            //btnMaximize.BackColor = Color.Gainsboro;
+            //btnMinimize.BackColor = Color.Gainsboro;
+            //btnRestore.BackColor = Color.Gainsboro;
+            //picBoxLogo.BackColor = Color.Gainsboro;
+            //lblCompanyName.BackColor = Color.Gainsboro;
         }
 
         private void pnlHead_MouseMove(object sender, MouseEventArgs e)
@@ -115,68 +118,93 @@ namespace Billing_System
         private void lblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             helpers.forgotpass = "";
+            home1.BringToFront();
             login1.BringToFront();
-            lblLogin.Visible = false;
-            lblSignUp.Visible = true;
+            lblLogin.Enabled = false;
+
+
         }
 
         private void lblViewInvoice_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             viewInvioces1.BringToFront();
+            lblInvoice.Enabled = true;
+            lblViewInvoice.Enabled = false;
+            lblNewMedicine.Enabled = true;
+            lblMedicineStock.Enabled = true;
             lblLogin.Visible = false;
-            lblSignUp.Visible = false;
+
+            
         }
 
         private void lblInvoice_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            lblInvoice.Enabled = false;
+            lblViewInvoice.Enabled = true;
+            lblNewMedicine.Enabled = true;
+            lblMedicineStock.Enabled = true;
             shopInvoice1.ClearTextBoxes();
+            shopInvoice1.MaxInvoice();
+            shopInvoice1.getValues();
             shopInvoice1.medicineList.Clear();
-            shopInvoice2.BringToFront();
+            shopInvoice1.BringToFront();
             lblLogin.Visible = false;
-            lblSignUp.Visible = false;
+
+            
+
+        }
+
+
+        SqlConnection conConnection;
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+
+
+
+
+            conConnection = new SqlConnection(SystemFunctions.ConnectionString());
+            //home1.BringToFront();
+            //MessageBox.Show(Environment.MachineName, "Machine Name", MessageBoxButtons.OK);
+
+            //if (this.WindowState == FormWindowState.Maximized)
+            //{
+            //    btnRestore.BringToFront();
+            //}
+            
         }
 
         
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            home1.BringToFront();
-            //login1.BringToFront();
-
-            //lblInvoice.Visible = false;
-            //lblViewInvoice.Visible = false;
-            //lblNewMedicine.Visible = false;
-            //lblMedicineStock.Visible = false;
-            //lblSignout.Visible = false;
-            //lblSignUp.Visible = true;
-
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                btnRestore.BringToFront();
-            }
-        }
-
-        private void lblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            signup1.BringToFront();
-            lblLogin.Visible = true;
-            lblSignUp.Visible = false;
-        }
-
         private void lblSignout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             home1.BringToFront();
-            login1.BringToFront();
+            //login1.BringToFront();
+            lblInvoice.Enabled = true;
+            lblViewInvoice.Enabled = true;
+            lblNewMedicine.Enabled = true;
+            lblMedicineStock.Enabled = true;
+            lblLogin.Visible = true;
+            lblLogin.Enabled = true;
+
             helpers.LoggedUser = "";
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            lblInvoice.Enabled = true;
+            lblViewInvoice.Enabled = true;
+            lblNewMedicine.Enabled = false;
+            lblMedicineStock.Enabled = true;
             newMedicine1.BringToFront();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            lblInvoice.Enabled = true;
+            lblViewInvoice.Enabled = true;
+            lblNewMedicine.Enabled = true;
+            lblMedicineStock.Enabled = false;
             viewStock1.BringToFront();
         }
 
@@ -196,8 +224,9 @@ namespace Billing_System
                 lblNewMedicine.Visible = true;
                 lblMedicineStock.Visible = true;
                 lblSignout.Visible = true;
-                lblSignUp.Visible = false;
                 lblLogin.Visible = false;
+                
+
             } else
             {
                 lblInvoice.Visible = false;
@@ -205,12 +234,11 @@ namespace Billing_System
                 lblNewMedicine.Visible = false;
                 lblMedicineStock.Visible = false;
                 lblSignout.Visible = false;
-                lblSignUp.Visible = true;
-                lblLogin.Visible = true;
+
             }
             if (helpers.forgotpass == "yes")
             {
-                forgottPass1.BringToFront();
+                //forgottPass1.BringToFront();
             }
         }
     }

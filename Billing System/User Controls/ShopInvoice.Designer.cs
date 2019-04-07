@@ -89,6 +89,8 @@ namespace Billing_System.User_Controls
             this.Bludol = new DevComponents.Editors.ComboItem();
             this.lblStock = new System.Windows.Forms.Label();
             this.txtStock = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblRemainingStock = new System.Windows.Forms.Label();
+            this.txtRemainingStock = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panelMediList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMediList)).BeginInit();
             this.menuDGV.SuspendLayout();
@@ -210,7 +212,7 @@ namespace Billing_System.User_Controls
             this.lblMediName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMediName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMediName.Location = new System.Drawing.Point(42, 186);
+            this.lblMediName.Location = new System.Drawing.Point(38, 186);
             this.lblMediName.Name = "lblMediName";
             this.lblMediName.Size = new System.Drawing.Size(457, 20);
             this.lblMediName.TabIndex = 4;
@@ -221,7 +223,7 @@ namespace Billing_System.User_Controls
             // 
             this.lblBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBatch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBatch.Location = new System.Drawing.Point(506, 186);
+            this.lblBatch.Location = new System.Drawing.Point(502, 186);
             this.lblBatch.Name = "lblBatch";
             this.lblBatch.Size = new System.Drawing.Size(149, 20);
             this.lblBatch.TabIndex = 5;
@@ -501,7 +503,6 @@ namespace Billing_System.User_Controls
             this.txtSrNo.TabStop = false;
             this.txtSrNo.Text = "1";
             this.txtSrNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSrNo.Visible = false;
             this.txtSrNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSrNo_KeyPress);
             // 
             // txtBatch
@@ -516,7 +517,7 @@ namespace Billing_System.User_Controls
             this.txtBatch.FocusHighlightColor = System.Drawing.Color.White;
             this.txtBatch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBatch.ForeColor = System.Drawing.Color.Black;
-            this.txtBatch.Location = new System.Drawing.Point(506, 222);
+            this.txtBatch.Location = new System.Drawing.Point(502, 222);
             this.txtBatch.MaxLength = 10;
             this.txtBatch.Name = "txtBatch";
             this.txtBatch.PreventEnterBeep = true;
@@ -774,9 +775,9 @@ namespace Billing_System.User_Controls
             this.cbMediName.Items.AddRange(new object[] {
             this.Panadol,
             this.Bludol});
-            this.cbMediName.Location = new System.Drawing.Point(43, 222);
+            this.cbMediName.Location = new System.Drawing.Point(42, 222);
             this.cbMediName.Name = "cbMediName";
-            this.cbMediName.Size = new System.Drawing.Size(456, 33);
+            this.cbMediName.Size = new System.Drawing.Size(454, 33);
             this.cbMediName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbMediName.TabIndex = 37;
             this.cbMediName.SelectedIndexChanged += new System.EventHandler(this.cbMediName_SelectedIndexChanged);
@@ -800,6 +801,7 @@ namespace Billing_System.User_Controls
             this.lblStock.TabIndex = 38;
             this.lblStock.Text = "Stock Qty.";
             this.lblStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStock.Visible = false;
             // 
             // txtStock
             // 
@@ -813,14 +815,48 @@ namespace Billing_System.User_Controls
             this.txtStock.FocusHighlightColor = System.Drawing.Color.White;
             this.txtStock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStock.ForeColor = System.Drawing.Color.Black;
-            this.txtStock.Location = new System.Drawing.Point(324, 576);
+            this.txtStock.Location = new System.Drawing.Point(324, 589);
             this.txtStock.MaxLength = 10;
             this.txtStock.Name = "txtStock";
             this.txtStock.PreventEnterBeep = true;
             this.txtStock.Size = new System.Drawing.Size(104, 33);
             this.txtStock.TabIndex = 39;
             this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtStock.Visible = false;
             this.txtStock.TextChanged += new System.EventHandler(this.txtStock_TextChanged);
+            // 
+            // lblRemainingStock
+            // 
+            this.lblRemainingStock.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblRemainingStock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemainingStock.Location = new System.Drawing.Point(452, 540);
+            this.lblRemainingStock.Name = "lblRemainingStock";
+            this.lblRemainingStock.Size = new System.Drawing.Size(104, 44);
+            this.lblRemainingStock.TabIndex = 40;
+            this.lblRemainingStock.Text = "Remaining Stock";
+            this.lblRemainingStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRemainingStock.Visible = false;
+            // 
+            // txtRemainingStock
+            // 
+            this.txtRemainingStock.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            // 
+            // 
+            // 
+            this.txtRemainingStock.Border.Class = "TextBoxBorder";
+            this.txtRemainingStock.Border.CornerDiameter = 5;
+            this.txtRemainingStock.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.txtRemainingStock.FocusHighlightColor = System.Drawing.Color.White;
+            this.txtRemainingStock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemainingStock.ForeColor = System.Drawing.Color.Black;
+            this.txtRemainingStock.Location = new System.Drawing.Point(452, 589);
+            this.txtRemainingStock.MaxLength = 10;
+            this.txtRemainingStock.Name = "txtRemainingStock";
+            this.txtRemainingStock.PreventEnterBeep = true;
+            this.txtRemainingStock.Size = new System.Drawing.Size(104, 33);
+            this.txtRemainingStock.TabIndex = 41;
+            this.txtRemainingStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtRemainingStock.Visible = false;
             // 
             // ShopInvoice
             // 
@@ -828,6 +864,8 @@ namespace Billing_System.User_Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblRemainingStock);
+            this.Controls.Add(this.txtRemainingStock);
             this.Controls.Add(this.lblBatch);
             this.Controls.Add(this.txtBatch);
             this.Controls.Add(this.lblStock);
@@ -934,5 +972,7 @@ namespace Billing_System.User_Controls
         private DataGridViewTextBoxColumn Price;
         private Label lblStock;
         private DevComponents.DotNetBar.Controls.TextBoxX txtStock;
+        private Label lblRemainingStock;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtRemainingStock;
     }
 }

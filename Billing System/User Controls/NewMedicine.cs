@@ -14,12 +14,63 @@ namespace Billing_System.User_Controls
 {
     public partial class NewMedicine : UserControl
     {
+        private static NewMedicine _instance;
+        public static NewMedicine Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new NewMedicine();
+                }
+                return _instance;
+            }
+        }
         public NewMedicine()
         {
             InitializeComponent();
+            AutoCompleteMedicine();
+
         }
         SqlConnection conConnection;
         List<StockItems> medicineList = new List<StockItems>();
+
+        SqlCommand cmdSearchMedicine;
+        SqlDataReader reader;
+        private string strMediName;
+
+        void AutoCompleteMedicine()
+        {
+            conConnection = new SqlConnection(SystemFunctions.ConnectionString());
+            if (conConnection.State == ConnectionState.Closed)
+            {
+                conConnection.Open();
+            }
+
+            txtMediName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtMediName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
+
+            cmdSearchMedicine = new SqlCommand("Select * from MedicineStock", conConnection);
+            reader = cmdSearchMedicine.ExecuteReader();
+            try
+            {
+                while (reader.Read())
+                {
+                    strMediName = reader["MedicineName"].ToString();
+                    coll.Add(strMediName);
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            reader.Close();
+            txtMediName.AutoCompleteCustomSource = coll;
+            conConnection.Close();
+        }
+
 
         public void ClearTextBoxes()
         {
@@ -39,7 +90,9 @@ namespace Billing_System.User_Controls
 
         private void NewMedicine_Load(object sender, EventArgs e)
         {
-            conConnection = new SqlConnection(SystemFunctions.ConnectionString());   
+            conConnection = new SqlConnection(SystemFunctions.ConnectionString());
+
+            btnCancel.Enabled = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -223,6 +276,51 @@ namespace Billing_System.User_Controls
         {
             this.dgvMediList.Columns["SrNo"].Visible = false;
 
+        }
+
+        private void txtMediName_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMediName.Text != "")
+            {
+                btnCancel.Enabled = true;
+            }
+            else
+            {
+                btnCancel.Enabled = false;
+            }
+        }
+
+        private void txtBatch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBatch.Text != "")
+            {
+                btnCancel.Enabled = true;
+            }
+            else {
+                    btnCancel.Enabled = false;
+                    }
+        }
+
+        private void txtQty_TextChanged(object sender, EventArgs e)
+        {
+            if (txtQty.Text != "")
+            {
+                btnCancel.Enabled = true;
+            }
+            else {
+                        btnCancel.Enabled = false;
+                        }
+        }
+
+        private void txtRate_TextChanged(object sender, EventArgs e)
+        {
+            if (txtRate.Text != "")
+            {
+                btnCancel.Enabled = true;
+            }
+            else {
+                            btnCancel.Enabled = false;
+                            }
         }
     }
 }

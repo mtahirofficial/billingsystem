@@ -16,7 +16,19 @@ namespace Billing_System.User_Controls
 {
     public partial class ShopInvoice : UserControl
     {
-        
+        private static ShopInvoice _instance;
+        public static ShopInvoice Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ShopInvoice();
+                }
+                return _instance;
+            }
+        }
+
         public ShopInvoice()
         {
             InitializeComponent();
@@ -54,6 +66,50 @@ namespace Billing_System.User_Controls
             combo.DataSource = table;
             combo.DisplayMember = displayMember;
             combo.ValueMember = valueMember;
+        }
+public static string maxNumber;
+        public void MaxInvoice()
+        {
+            if (conConnection.State == ConnectionState.Closed)
+            {
+                conConnection.Open();
+            }
+            SqlCommand MaxInvoice = new SqlCommand("Select max(InvoiceNo) as maxInvoiceNo From ShopAmount", conConnection);
+            SqlDataReader MaxReader = MaxInvoice.ExecuteReader();
+            if (MaxReader.Read())
+            {
+                if (MaxReader.GetValue(0).ToString() == "")
+                {
+                    maxNumber = "00001";
+                    txtSrNo.Text = "1";
+
+                }
+                else
+                {
+                    double max = Convert.ToDouble(MaxReader.GetValue(0));
+                    max++;
+                    var Num = Convert.ToInt32(max);
+                    maxNumber = Num.ToString().PadLeft(5, '0');
+                    txtSrNo.Text = "1";
+
+                }
+            }
+            MaxReader.Close();
+            conConnection.Close();
+            txtInvoice.Text = maxNumber;
+            //return maxNumber;
+        }
+
+        public void getValues()
+        {
+            if (conConnection.State == ConnectionState.Closed)
+            {
+                conConnection.Open();
+            }
+            string query = "select ID, MedicineName from MedicineStock";
+            FillCombo(cbMediName, query, "MedicineName", "ID");
+            cbMediName_SelectedIndexChanged(null, null);
+            conConnection.Close();
         }
 
         void AutoCompleteCombo()
@@ -120,52 +176,39 @@ namespace Billing_System.User_Controls
         private void ShopInvoice_Load(object sender, EventArgs e)
         {
             conConnection = new SqlConnection(SystemFunctions.ConnectionString());
-            conConnection.Open();
+            if (conConnection.State == ConnectionState.Closed)
+            {
+                conConnection.Open();
+            }
             try
             {
-                SqlCommand MaxInvoice = new SqlCommand("Select max(InvoiceNo) as maxInvoiceNo From ShopAmount", conConnection);
-                SqlDataReader MaxReader = MaxInvoice.ExecuteReader();
-                if (MaxReader.Read())
-                {
-                    if (MaxReader.GetValue(0).ToString() == "")
-                    {
-                        txtInvoice.Text = "00001";
-                    }
-                    else
-                    {
-
-                        double max = Convert.ToDouble(MaxReader.GetValue(0));
-                        max++;
-                        var Num = Convert.ToInt32(max);
-                        txtInvoice.Text = Num.ToString().PadLeft(5, '0');
-                    }
-                    MaxReader.Close();
-                }
+                MaxInvoice();
+                //txtInvoice.Text = MaxInvoice();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
 
             }
+
+            try
+            {
+                //string query = "select ID, MedicineName from MedicineStock";
+                //FillCombo(cbMediName, query, "MedicineName", "ID");
+                //cbMediName_SelectedIndexChanged(null, null);
+                getValues();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             finally
             {
                 conConnection.Close();
 
             }
-
-            try
-            {
-                string query = "select ID, MedicineName from MedicineStock";
-                FillCombo(cbMediName, query, "MedicineName", "ID");
-                cbMediName_SelectedIndexChanged(null, null);
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
         }
 
         private void txtSrNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -182,7 +225,7 @@ namespace Billing_System.User_Controls
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                MessageBox.Show("Only integer value is allowed.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Only integer value is allowed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Handled = true;
             }
         }
@@ -263,7 +306,7 @@ namespace Billing_System.User_Controls
 
                             SqlCommand cmdInsert = new SqlCommand("Insert into ShopInvoice (InvoiceNo, SerialNo, Product, BatchNo, Quantity, UnitPrice, TotalPrice, Date) values ('" + txtInvoice.Text + "','" + row.Cells[0].Value + "','" + row.Cells[1].Value + "','" + row.Cells[2].Value + "','" + row.Cells[4].Value + "','" + row.Cells[5].Value + "','" + row.Cells[6].Value + "','" + row.Cells[7].Value + "')", conConnection);
                             cmdInsert.ExecuteNonQuery();
-                            SqlCommand cmdUpdate = new SqlCommand("Update MedicineStock set Quantity = '"+ row.Cells[3].Value + "' where MedicineName = '"+ row.Cells[1].Value + "'", conConnection);
+                            SqlCommand cmdUpdate = new SqlCommand("Update MedicineStock set Quantity = '" + row.Cells[3].Value + "' where MedicineName = '" + row.Cells[1].Value + "'", conConnection);
                             cmdUpdate.ExecuteNonQuery();
 
                             //MessageBox.Show("0:" + row.Cells[0].Value + "   1:" + row.Cells[1].Value + "   2:" + row.Cells[2].Value + "   3:" + row.Cells[3].Value + "   4:" + row.Cells[4].Value + "   5:" + row.Cells[5].Value + "   6:" + row.Cells[6].Value + "   7:" + row.Cells[7].Value, "Test DatagridView", MessageBoxButtons.OK);
@@ -275,25 +318,7 @@ namespace Billing_System.User_Controls
                     cmdInsertAmount.ExecuteNonQuery();
                     MessageBox.Show("Record is Entered.", "Message", MessageBoxButtons.OK);
 
-
-                    SqlCommand MaxInvoice = new SqlCommand("Select max(InvoiceNo) as maxInvoiceNo From ShopCustomer", conConnection);
-                    SqlDataReader MaxReader = MaxInvoice.ExecuteReader();
-                    if (MaxReader.Read())
-                    {
-                        if (MaxReader.GetValue(0).ToString() == "")
-                        {
-                            txtInvoice.Text = "00001";
-                        }
-                        else
-                        {
-
-                            double max = Convert.ToDouble(MaxReader.GetValue(0));
-                            max++;
-                            var Num = Convert.ToInt32(max);
-                            txtInvoice.Text = Num.ToString().PadLeft(5, '0');
-                        }
-                        MaxReader.Close();
-                    }
+                    
 
                 }
                 catch (Exception ex)
@@ -303,14 +328,15 @@ namespace Billing_System.User_Controls
                 }
                 finally
                 {
-                    conConnection.Close();
 
                     printPreviewDialog1.Document = printDocument1;
                     printPreviewDialog1.ShowDialog();
 
                     string fileName = (string)(txtPhone.Text);
-                    string directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                    
+                    //string directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    string directory = Application.StartupPath + "//invoices";
+                    //string directory = "~/Invoices";
+
 
                     printDocument1.PrinterSettings = new PrinterSettings()
                     {
@@ -328,6 +354,23 @@ namespace Billing_System.User_Controls
 
 
                     ClearTextBoxes();
+
+                    MaxInvoice();
+
+
+                    try
+                    {
+                        string query = "select ID, MedicineName from MedicineStock";
+                        FillCombo(cbMediName, query, "MedicineName", "ID");
+                        cbMediName_SelectedIndexChanged(null, null);
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
                     txtName.Focus();
                     txtSrNo.Text = "1";
                     txtPrice.Text = "0";
@@ -336,10 +379,12 @@ namespace Billing_System.User_Controls
                     medicineList.Clear();
                     dgvMediList.DataSource = null;
                     lblTotalBill.Text = "0";
+                    conConnection.Close();
+
                 }
 
             }
-            
+
         }
 
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
@@ -353,8 +398,8 @@ namespace Billing_System.User_Controls
         }
         private int numberOfItemsPerPage = 0;
         private int numberOfItemsPrintedSoFar = 0;
-            Bitmap bmWarranty;
-            Image Warranty;
+        Bitmap bmWarranty;
+        Image Warranty;
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             bmWarranty = Properties.Resources.wrranty_shop;
@@ -372,7 +417,7 @@ namespace Billing_System.User_Controls
             e.Graphics.DrawString("Phone No. " + " " + txtPhone.Text, new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(22, 180));
             #endregion
 
-            
+
             Bitmap bmhorline = Properties.Resources.line;
             Image line = bmhorline;
 
@@ -380,7 +425,7 @@ namespace Billing_System.User_Controls
             Bitmap bmInvoiceLine = Properties.Resources.invoice_line;
             Image Invoice = bmInvoiceLine;
             //e.Graphics.DrawImage(Invoice, 690, 140);
-            e.Graphics.DrawString("------------",new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(705, 120));
+            e.Graphics.DrawString("------------", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(705, 120));
 
             #endregion
 
@@ -399,13 +444,13 @@ namespace Billing_System.User_Controls
             #endregion
             #region horizontal1
             e.Graphics.DrawImage(line, 20, 230);
-            
+
             e.Graphics.DrawImage(line, 20, 265);
 
-            
-            
 
-          
+
+
+
             #endregion
 
             #region Item Headings
@@ -450,11 +495,11 @@ namespace Billing_System.User_Controls
             //createVerticleLine(683, 228);
             //createVerticleLine(817, 228);
 
-            
+
             #endregion
 
             #region Items
-            
+
             int rowPosition = 270;
             for (var i = numberOfItemsPrintedSoFar; i < medicineList.Count; i++)
             {
@@ -471,28 +516,50 @@ namespace Billing_System.User_Controls
                         e.Graphics.DrawString(medicineList[i].Rate.ToString(), new Font("Calibri", 15, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(612, rowPosition));
                         e.Graphics.DrawString(medicineList[i].Price.ToString() + "/-Rs", new Font("Calibri", 15, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(700, rowPosition));
                         rowPosition += 25;
-                    } else
+                    }
+                    else
                     {
                         e.HasMorePages = false;
                     }
-                    if (i >= numberOfItemsPrintedSoFar +1)
+                    if (i >= numberOfItemsPrintedSoFar + 1)
                     {
                         e.Graphics.DrawString("-----------------------------------------------------------------------------------------------", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(15, 963));
                         e.Graphics.DrawImage(Warranty, 22, 990);
                     }
-                } else
+                }
+                else
                 {
                     numberOfItemsPerPage = 0;
                     e.HasMorePages = true;
                     return;
                 }
-                
+
             }
             e.Graphics.DrawString("-----------------------------------------------------------------------------------------------", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(15, 843));
+
+            // Advance
             e.Graphics.DrawString("Advance", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(85, 865));
-            e.Graphics.DrawString(txtAdvance.Text + "/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 865));
+            if (txtAdvance.Text != "" && Convert.ToInt32(txtAdvance.Text) >= 0)
+            {
+                e.Graphics.DrawString(txtAdvance.Text + "/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 865));
+            }
+            else
+            {
+                e.Graphics.DrawString("0/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 865));
+            }
+
+            // Balance
             e.Graphics.DrawString("Balance", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(85, 900));
-            e.Graphics.DrawString(txtBalance.Text + "/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 900));
+            if (txtAdvance.Text != "" && Convert.ToInt32(txtAdvance.Text) >= 0)
+            {
+                e.Graphics.DrawString(txtBalance.Text + "/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 900));
+            }
+            else
+            {
+                e.Graphics.DrawString("0/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 900));
+            }
+
+
             e.Graphics.DrawString("Total Amount", new Font("Calibri", 25, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(85, 935));
             e.Graphics.DrawString(lblTotalBill.Text + "/-Rs", new Font("Calibri", 25, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 935));
             e.Graphics.DrawString("-----------------------------------------------------------------------------------------------", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(15, 963));
@@ -500,7 +567,7 @@ namespace Billing_System.User_Controls
             #endregion
 
             #region Warranty
-                    e.Graphics.DrawImage(Warranty, 22, 990);
+            e.Graphics.DrawImage(Warranty, 22, 990);
             #endregion
 
             // reset the variables
@@ -629,26 +696,20 @@ namespace Billing_System.User_Controls
 
                 try
                 {
+                    string medicineName = cbMediName.Text.Trim();
+                    int index = medicineList.FindIndex(medicineObject => medicineObject.MedicineName == medicineName); // find index of item name in list
 
-                    if (Convert.ToInt32(txtQty.Text) > Convert.ToInt32(txtStock.Text))
+                    if (index == -1)    // if index not found
                     {
-                        MessageBox.Show("Quantity exceeds from stock.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtQty.Focus();
-                    } else
-                    {
-                        string medicineName = cbMediName.Text.Trim();
-                        int index = medicineList.FindIndex(medicineObject => medicineObject.MedicineName == medicineName);
-
-
-
-                        if (index == -1)
+                        if (Convert.ToInt32(txtQty.Text) > Convert.ToInt32(txtStock.Text)) //if quantity exceeds
                         {
-                            //MessageBox.Show("if : Index of Item = " + index);
+                            MessageBox.Show("Quantity of " + cbMediName.Text.Trim() + " exceeds from stock.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtQty.Focus();
+                        }
+                        else // if stock exceeds
+                        {
                             int remainingStock = Convert.ToInt32(txtStock.Text) - Convert.ToInt32(txtQty.Text);
-                            //txtStock.Text = remainingStock.ToString();
-
-
-
+                            txtRemainingStock.Text = remainingStock.ToString();
                             MedicineItems medicine = new MedicineItems()
                             {
                                 SrNo = Convert.ToInt32(txtSrNo.Text),
@@ -660,19 +721,31 @@ namespace Billing_System.User_Controls
                                 Price = Convert.ToDecimal(txtPrice.Text),
                                 Date = DateTime.Now.ToShortDateString()
                             };
-
                             medicineList.Add(medicine);
                             dgvMediList.DataSource = null;
                             dgvMediList.DataSource = medicineList;
+
                         }
-                        else
+                    }
+                    else // if index found
+                    {
+                        // check stock
+                        txtRemainingStock.Text = medicineList[index].Stock.ToString();
+                        if (Convert.ToInt32(txtQty.Text) > Convert.ToInt32(txtRemainingStock.Text)) //if quantity exceeds
                         {
-                            //MessageBox.Show("else : Index of Item = " + index);
+                            MessageBox.Show("Quantity of " + cbMediName.Text.Trim() + " exceeds from stock.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtQty.Focus();
+                        }
+                        else // if stock exceeds
+                        {
+                            txtRemainingStock.Text = Convert.ToString(Convert.ToInt32(txtRemainingStock.Text) - Convert.ToInt32(txtQty.Text));
                             medicineList[index].Quantity += Convert.ToInt32(txtQty.Text);
+                            medicineList[index].Stock = Convert.ToInt32(txtRemainingStock.Text);
                             dgvMediList.DataSource = null;
                             dgvMediList.DataSource = medicineList;
                         }
                     }
+
                     //dgvMediList.Rows.Add(null, txtSrNo.Text, cbMediName.Text, txtBatch.Text, txtQty.Text, txtRate.Text, txtPrice.Text, DateTime.Now.ToShortDateString());
                     //foreach (DataGridViewRow row in dgvMediList.Rows)
                     //{
@@ -690,7 +763,7 @@ namespace Billing_System.User_Controls
                 }
 
                 string strSrNo = txtSrNo.Text;
-                cbMediName.SelectedIndex = 0;
+                //cbMediName.SelectedIndex = 0;
                 txtQty.Clear();
                 txtSrNo.Text = Convert.ToString(Convert.ToInt32(strSrNo) + 1);
                 cbMediName.Focus();
@@ -725,8 +798,8 @@ namespace Billing_System.User_Controls
 
         private void cbMediName_Leave(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void cbMediName_SelectedIndexChanged(object sender, EventArgs e)
@@ -735,17 +808,28 @@ namespace Billing_System.User_Controls
             {
                 conConnection.Open();
             }
+            string medicineName = cbMediName.Text.Trim();
+            int index = medicineList.FindIndex(medicineObject => medicineObject.MedicineName == medicineName); // find index of item name in list
+
             int val;
             Int32.TryParse(cbMediName.SelectedValue.ToString(), out val);
             string query = "select ID, MedicineName, BatchName, Quantity, Rate from MedicineStock where ID = '" + val + "'";
             SqlCommand cmdSelect = new SqlCommand(query, conConnection);
-            
+
             SqlDataReader reader = cmdSelect.ExecuteReader();
 
             if (reader.Read())
             {
                 txtBatch.Text = reader["BatchName"].ToString();
                 txtStock.Text = reader["Quantity"].ToString();
+                if (index == -1)
+                {
+                    txtRemainingStock.Text = reader["Quantity"].ToString();
+                }
+                else
+                {
+                    txtRemainingStock.Text = medicineList[index].Stock.ToString();
+                }
                 txtRate.Text = reader["Rate"].ToString();
 
                 //if (Convert.ToInt32(txtStock.Text) <= 5)
@@ -784,12 +868,47 @@ namespace Billing_System.User_Controls
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Trim() == "" || txtPhone.Text.Trim() == "" || lblTotalBill.Text.Trim() == "0" || cbMediName.Text.Trim() == "" || txtQty.Text.Trim() == "" || txtBatch.Text.Trim() == "" || txtRate.Text.Trim() == "")
+            if (txtName.Text.Trim() != "" || txtPhone.Text.Trim() != "" || lblTotalBill.Text.Trim() != "0" || medicineList.Count > 0 || txtQty.Text.Trim() != "")
             {
+                if (conConnection.State == ConnectionState.Closed)
+                {
+                    conConnection.Open();
+                }
                 DialogResult result = MessageBox.Show("Are you sure, you want to cancel ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 if (result == DialogResult.Yes)
                 {
                     ClearTextBoxes();
+                    SqlCommand MaxInvoice = new SqlCommand("Select max(InvoiceNo) as maxInvoiceNo From ShopCustomer", conConnection);
+                    SqlDataReader MaxReader = MaxInvoice.ExecuteReader();
+                    if (MaxReader.Read())
+                    {
+                        if (MaxReader.GetValue(0).ToString() == "")
+                        {
+                            txtInvoice.Text = "00001";
+                        }
+                        else
+                        {
+
+                            double max = Convert.ToDouble(MaxReader.GetValue(0));
+                            max++;
+                            var Num = Convert.ToInt32(max);
+                            txtInvoice.Text = Num.ToString().PadLeft(5, '0');
+                        }
+                        MaxReader.Close();
+                    }
+                    try
+                    {
+                        string query = "select ID, MedicineName from MedicineStock";
+                        FillCombo(cbMediName, query, "MedicineName", "ID");
+                        cbMediName_SelectedIndexChanged(null, null);
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
                     txtName.Focus();
                     txtSrNo.Text = "1";
                     txtPrice.Text = "0";
@@ -798,16 +917,14 @@ namespace Billing_System.User_Controls
                     medicineList.Clear();
                     dgvMediList.DataSource = null;
                     lblTotalBill.Text = "0";
-                } else
+                }
+                else
                 {
-                    if (conConnection.State == ConnectionState.Closed)
-                    {
-                        conConnection.Open();
-                    }
+
                     //int val;
                     //Int32.TryParse(cbMediName.SelectedValue.ToString(), out val);
-                    string query = "select ID, MedicineName, BatchName, Quantity, Rate from MedicineStock where MedicineName = '" + cbMediName.Text.Trim() + "'";
-                    SqlCommand cmdSelect = new SqlCommand(query, conConnection);
+                    string query1 = "select ID, MedicineName, BatchName, Quantity, Rate from MedicineStock where MedicineName = '" + cbMediName.Text.Trim() + "'";
+                    SqlCommand cmdSelect = new SqlCommand(query1, conConnection);
 
                     SqlDataReader reader = cmdSelect.ExecuteReader();
 
@@ -818,9 +935,22 @@ namespace Billing_System.User_Controls
                         txtRate.Text = reader["Rate"].ToString();
                     }
                     reader.Close();
+
+                    try
+                    {
+                        string query = "select ID, MedicineName from MedicineStock";
+                        FillCombo(cbMediName, query, "MedicineName", "ID");
+                        cbMediName_SelectedIndexChanged(null, null);
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                     conConnection.Close();
                 }
-            } 
+            }
         }
 
         private void dgvMediList_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -843,7 +973,8 @@ namespace Billing_System.User_Controls
             if (colName == "Quantity")
             {
                 dgvMediList.Rows[rowIndex].Cells[cellIndex + 2].Value = Convert.ToString(Convert.ToInt32(currentCell) * Convert.ToInt32(afterCurrentCell));
-            } else if (colName == "Rate")
+            }
+            else if (colName == "Rate")
             {
                 dgvMediList.Rows[rowIndex].Cells[cellIndex + 1].Value = Convert.ToString(Convert.ToInt32(currentCell) * Convert.ToInt32(beforeCurrentCell));
             }
@@ -872,5 +1003,5 @@ namespace Billing_System.User_Controls
             }
         }
     }
-    
+
 }

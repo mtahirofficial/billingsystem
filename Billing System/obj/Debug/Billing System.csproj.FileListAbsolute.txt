@@ -285,3 +285,4 @@ D:\Projects\Billing System\Billing System\obj\Debug\Billing System.exe
 D:\Projects\Billing System\Billing System\obj\Debug\Billing System.pdb
 D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.User_Controls.ForgottPass.resources
 D:\Projects\Billing System\Billing System\bin\Debug\MetroFramework.dll
+D:\Projects\Billing System\Billing System\obj\Debug\Billing_System.Form1.resources

@@ -47,8 +47,35 @@
             this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lblPhone = new System.Windows.Forms.Label();
             this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSave = new DevComponents.DotNetBar.ButtonX();
+            this.txtMedi = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblBatch = new System.Windows.Forms.Label();
+            this.txtBatch = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.sepLine3 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblRate = new System.Windows.Forms.Label();
+            this.lblQty = new System.Windows.Forms.Label();
+            this.lblMediName = new System.Windows.Forms.Label();
+            this.sepLinetwo = new Bunifu.Framework.UI.BunifuSeparator();
+            this.txtPrice = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtRate = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtQty = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSrNo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lblSrNo = new System.Windows.Forms.Label();
+            this.sepLineOne = new Bunifu.Framework.UI.BunifuSeparator();
+            this.pnlHead = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.picBoxLogo = new System.Windows.Forms.PictureBox();
+            this.lblCompanyName = new DevComponents.DotNetBar.LabelX();
+            this.btnMinimize = new DevComponents.DotNetBar.ButtonX();
+            this.btnRestore = new DevComponents.DotNetBar.ButtonX();
+            this.btnMaximize = new DevComponents.DotNetBar.ButtonX();
+            this.btnClose = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHide)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.pnlHead.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLogin
@@ -309,11 +336,400 @@
             this.textBoxX4.Size = new System.Drawing.Size(305, 29);
             this.textBoxX4.TabIndex = 27;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Controls.Add(this.txtMedi);
+            this.panel2.Controls.Add(this.lblBatch);
+            this.panel2.Controls.Add(this.txtBatch);
+            this.panel2.Controls.Add(this.sepLine3);
+            this.panel2.Controls.Add(this.lblPrice);
+            this.panel2.Controls.Add(this.lblRate);
+            this.panel2.Controls.Add(this.lblQty);
+            this.panel2.Controls.Add(this.lblMediName);
+            this.panel2.Controls.Add(this.sepLinetwo);
+            this.panel2.Controls.Add(this.txtPrice);
+            this.panel2.Controls.Add(this.txtRate);
+            this.panel2.Controls.Add(this.txtQty);
+            this.panel2.Controls.Add(this.txtSrNo);
+            this.panel2.Controls.Add(this.lblSrNo);
+            this.panel2.Controls.Add(this.sepLineOne);
+            this.panel2.Location = new System.Drawing.Point(35, 383);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(926, 104);
+            this.panel2.TabIndex = 88;
+            this.panel2.Visible = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(201)))), ((int)(((byte)(233)))));
+            this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(851, 52);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 33);
+            this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSave.TabIndex = 57;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextColor = System.Drawing.Color.White;
+            // 
+            // txtMedi
+            // 
+            this.txtMedi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.txtMedi.Border.Class = "TextBoxBorder";
+            this.txtMedi.Border.CornerDiameter = 5;
+            this.txtMedi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.txtMedi.FocusHighlightColor = System.Drawing.Color.White;
+            this.txtMedi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMedi.ForeColor = System.Drawing.Color.Black;
+            this.txtMedi.Location = new System.Drawing.Point(0, 52);
+            this.txtMedi.MaxLength = 10;
+            this.txtMedi.Name = "txtMedi";
+            this.txtMedi.PreventEnterBeep = true;
+            this.txtMedi.Size = new System.Drawing.Size(378, 33);
+            this.txtMedi.TabIndex = 101;
+            this.txtMedi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblBatch
+            // 
+            this.lblBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBatch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBatch.Location = new System.Drawing.Point(384, 16);
+            this.lblBatch.Name = "lblBatch";
+            this.lblBatch.Size = new System.Drawing.Size(149, 20);
+            this.lblBatch.TabIndex = 92;
+            this.lblBatch.Text = "Batch Name";
+            this.lblBatch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtBatch
+            // 
+            this.txtBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.txtBatch.Border.Class = "TextBoxBorder";
+            this.txtBatch.Border.CornerDiameter = 5;
+            this.txtBatch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.txtBatch.FocusHighlightColor = System.Drawing.Color.White;
+            this.txtBatch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBatch.ForeColor = System.Drawing.Color.Black;
+            this.txtBatch.Location = new System.Drawing.Point(384, 52);
+            this.txtBatch.MaxLength = 10;
+            this.txtBatch.Name = "txtBatch";
+            this.txtBatch.PreventEnterBeep = true;
+            this.txtBatch.Size = new System.Drawing.Size(149, 33);
+            this.txtBatch.TabIndex = 93;
+            this.txtBatch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // sepLine3
+            // 
+            this.sepLine3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sepLine3.BackColor = System.Drawing.Color.Transparent;
+            this.sepLine3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sepLine3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.sepLine3.LineThickness = 1;
+            this.sepLine3.Location = new System.Drawing.Point(1, 88);
+            this.sepLine3.Name = "sepLine3";
+            this.sepLine3.Size = new System.Drawing.Size(920, 10);
+            this.sepLine3.TabIndex = 100;
+            this.sepLine3.TabStop = false;
+            this.sepLine3.Transparency = 255;
+            this.sepLine3.Vertical = false;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(707, 16);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(131, 20);
+            this.lblPrice.TabIndex = 98;
+            this.lblPrice.Text = "Price";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRate
+            // 
+            this.lblRate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRate.Location = new System.Drawing.Point(619, 16);
+            this.lblRate.Name = "lblRate";
+            this.lblRate.Size = new System.Drawing.Size(82, 20);
+            this.lblRate.TabIndex = 96;
+            this.lblRate.Text = "Rate";
+            this.lblRate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblQty
+            // 
+            this.lblQty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblQty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQty.Location = new System.Drawing.Point(536, 16);
+            this.lblQty.Name = "lblQty";
+            this.lblQty.Size = new System.Drawing.Size(77, 20);
+            this.lblQty.TabIndex = 94;
+            this.lblQty.Text = "Qty.";
+            this.lblQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMediName
+            // 
+            this.lblMediName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMediName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMediName.Location = new System.Drawing.Point(3, 16);
+            this.lblMediName.Name = "lblMediName";
+            this.lblMediName.Size = new System.Drawing.Size(375, 20);
+            this.lblMediName.TabIndex = 91;
+            this.lblMediName.Text = "Medicine Name";
+            this.lblMediName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sepLinetwo
+            // 
+            this.sepLinetwo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sepLinetwo.BackColor = System.Drawing.Color.Transparent;
+            this.sepLinetwo.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sepLinetwo.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.sepLinetwo.LineThickness = 1;
+            this.sepLinetwo.Location = new System.Drawing.Point(1, 39);
+            this.sepLinetwo.Name = "sepLinetwo";
+            this.sepLinetwo.Size = new System.Drawing.Size(920, 10);
+            this.sepLinetwo.TabIndex = 87;
+            this.sepLinetwo.TabStop = false;
+            this.sepLinetwo.Transparency = 255;
+            this.sepLinetwo.Vertical = false;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.txtPrice.Border.Class = "TextBoxBorder";
+            this.txtPrice.Border.CornerDiameter = 5;
+            this.txtPrice.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.txtPrice.FocusHighlightColor = System.Drawing.Color.White;
+            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.ForeColor = System.Drawing.Color.Black;
+            this.txtPrice.Location = new System.Drawing.Point(712, 52);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.PreventEnterBeep = true;
+            this.txtPrice.ReadOnly = true;
+            this.txtPrice.Size = new System.Drawing.Size(133, 33);
+            this.txtPrice.TabIndex = 99;
+            this.txtPrice.TabStop = false;
+            this.txtPrice.Text = "0";
+            this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtRate
+            // 
+            this.txtRate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.txtRate.Border.Class = "TextBoxBorder";
+            this.txtRate.Border.CornerDiameter = 5;
+            this.txtRate.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.txtRate.FocusHighlightColor = System.Drawing.Color.White;
+            this.txtRate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRate.ForeColor = System.Drawing.Color.Black;
+            this.txtRate.Location = new System.Drawing.Point(624, 52);
+            this.txtRate.MaxLength = 5;
+            this.txtRate.Name = "txtRate";
+            this.txtRate.PreventEnterBeep = true;
+            this.txtRate.Size = new System.Drawing.Size(82, 33);
+            this.txtRate.TabIndex = 97;
+            this.txtRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtQty
+            // 
+            this.txtQty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.txtQty.Border.Class = "TextBoxBorder";
+            this.txtQty.Border.CornerDiameter = 5;
+            this.txtQty.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.txtQty.FocusHighlightColor = System.Drawing.Color.White;
+            this.txtQty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQty.ForeColor = System.Drawing.Color.Black;
+            this.txtQty.Location = new System.Drawing.Point(541, 52);
+            this.txtQty.MaxLength = 3;
+            this.txtQty.Name = "txtQty";
+            this.txtQty.PreventEnterBeep = true;
+            this.txtQty.Size = new System.Drawing.Size(77, 33);
+            this.txtQty.TabIndex = 95;
+            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSrNo
+            // 
+            // 
+            // 
+            // 
+            this.txtSrNo.Border.Class = "TextBoxBorder";
+            this.txtSrNo.Border.CornerDiameter = 5;
+            this.txtSrNo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.txtSrNo.FocusHighlightColor = System.Drawing.Color.White;
+            this.txtSrNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSrNo.ForeColor = System.Drawing.Color.Black;
+            this.txtSrNo.Location = new System.Drawing.Point(3, 52);
+            this.txtSrNo.Name = "txtSrNo";
+            this.txtSrNo.PreventEnterBeep = true;
+            this.txtSrNo.ReadOnly = true;
+            this.txtSrNo.Size = new System.Drawing.Size(82, 33);
+            this.txtSrNo.TabIndex = 89;
+            this.txtSrNo.TabStop = false;
+            this.txtSrNo.Text = "1";
+            this.txtSrNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSrNo.Visible = false;
+            // 
+            // lblSrNo
+            // 
+            this.lblSrNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSrNo.Location = new System.Drawing.Point(3, 16);
+            this.lblSrNo.Name = "lblSrNo";
+            this.lblSrNo.Size = new System.Drawing.Size(82, 20);
+            this.lblSrNo.TabIndex = 90;
+            this.lblSrNo.Text = "Sr #";
+            this.lblSrNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSrNo.Visible = false;
+            // 
+            // sepLineOne
+            // 
+            this.sepLineOne.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sepLineOne.BackColor = System.Drawing.Color.Transparent;
+            this.sepLineOne.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sepLineOne.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.sepLineOne.LineThickness = 1;
+            this.sepLineOne.Location = new System.Drawing.Point(3, 3);
+            this.sepLineOne.Name = "sepLineOne";
+            this.sepLineOne.Size = new System.Drawing.Size(920, 10);
+            this.sepLineOne.TabIndex = 88;
+            this.sepLineOne.TabStop = false;
+            this.sepLineOne.Transparency = 255;
+            this.sepLineOne.Vertical = false;
+            // 
+            // pnlHead
+            // 
+            this.pnlHead.BackColor = System.Drawing.Color.Snow;
+            this.pnlHead.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlHead.BackgroundImage")));
+            this.pnlHead.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHead.Controls.Add(this.picBoxLogo);
+            this.pnlHead.Controls.Add(this.lblCompanyName);
+            this.pnlHead.Controls.Add(this.btnMinimize);
+            this.pnlHead.Controls.Add(this.btnRestore);
+            this.pnlHead.Controls.Add(this.btnMaximize);
+            this.pnlHead.Controls.Add(this.btnClose);
+            this.pnlHead.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHead.GradientBottomLeft = System.Drawing.Color.White;
+            this.pnlHead.GradientBottomRight = System.Drawing.Color.White;
+            this.pnlHead.GradientTopLeft = System.Drawing.Color.White;
+            this.pnlHead.GradientTopRight = System.Drawing.Color.White;
+            this.pnlHead.Location = new System.Drawing.Point(0, 0);
+            this.pnlHead.Name = "pnlHead";
+            this.pnlHead.Quality = 10;
+            this.pnlHead.Size = new System.Drawing.Size(1000, 24);
+            this.pnlHead.TabIndex = 89;
+            // 
+            // picBoxLogo
+            // 
+            this.picBoxLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLogo.Image")));
+            this.picBoxLogo.Location = new System.Drawing.Point(0, 0);
+            this.picBoxLogo.Name = "picBoxLogo";
+            this.picBoxLogo.Size = new System.Drawing.Size(24, 24);
+            this.picBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxLogo.TabIndex = 7;
+            this.picBoxLogo.TabStop = false;
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.lblCompanyName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyName.Location = new System.Drawing.Point(25, 0);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(145, 24);
+            this.lblCompanyName.TabIndex = 7;
+            this.lblCompanyName.Text = "Zahid Medicine Company";
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(904, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.ShowSubItems = false;
+            this.btnMinimize.Size = new System.Drawing.Size(24, 24);
+            this.btnMinimize.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnMinimize.TabIndex = 16;
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnRestore.BackColor = System.Drawing.Color.Transparent;
+            this.btnRestore.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
+            this.btnRestore.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnRestore.Image = ((System.Drawing.Image)(resources.GetObject("btnRestore.Image")));
+            this.btnRestore.Location = new System.Drawing.Point(928, 0);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.ShowSubItems = false;
+            this.btnRestore.Size = new System.Drawing.Size(24, 24);
+            this.btnRestore.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnRestore.TabIndex = 18;
+            this.btnRestore.Visible = false;
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
+            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
+            this.btnMaximize.Location = new System.Drawing.Point(952, 0);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.ShowSubItems = false;
+            this.btnMaximize.Size = new System.Drawing.Size(24, 24);
+            this.btnMaximize.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnMaximize.TabIndex = 17;
+            // 
+            // btnClose
+            // 
+            this.btnClose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(976, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.ShowSubItems = false;
+            this.btnClose.Size = new System.Drawing.Size(24, 24);
+            this.btnClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnClose.TabIndex = 7;
+            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pnlHead);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.textBoxX4);
             this.Controls.Add(this.lblConfirmPass);
@@ -337,6 +753,9 @@
             this.Load += new System.EventHandler(this.Signup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHide)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.pnlHead.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,5 +781,29 @@
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
         private System.Windows.Forms.Label lblPhone;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
+        private System.Windows.Forms.Panel panel2;
+        private DevComponents.DotNetBar.ButtonX btnSave;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMedi;
+        private System.Windows.Forms.Label lblBatch;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtBatch;
+        private Bunifu.Framework.UI.BunifuSeparator sepLine3;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblRate;
+        private System.Windows.Forms.Label lblQty;
+        private System.Windows.Forms.Label lblMediName;
+        private Bunifu.Framework.UI.BunifuSeparator sepLinetwo;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPrice;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtRate;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtQty;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSrNo;
+        private System.Windows.Forms.Label lblSrNo;
+        private Bunifu.Framework.UI.BunifuSeparator sepLineOne;
+        private Bunifu.Framework.UI.BunifuGradientPanel pnlHead;
+        private System.Windows.Forms.PictureBox picBoxLogo;
+        private DevComponents.DotNetBar.LabelX lblCompanyName;
+        private DevComponents.DotNetBar.ButtonX btnMinimize;
+        private DevComponents.DotNetBar.ButtonX btnRestore;
+        private DevComponents.DotNetBar.ButtonX btnMaximize;
+        private DevComponents.DotNetBar.ButtonX btnClose;
     }
 }
