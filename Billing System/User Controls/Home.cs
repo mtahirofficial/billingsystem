@@ -40,7 +40,7 @@ namespace Billing_System.User_Controls
         }
         private void timer_Tick(object sender, EventArgs e)
         {
-            SlideImages(6);
+            SlideImages(10);
 
         }
     }
