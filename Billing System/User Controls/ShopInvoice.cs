@@ -405,7 +405,7 @@ public static string maxNumber;
             bmWarranty = Properties.Resources.wrranty_shop;
             Warranty = bmWarranty;
             #region Logo
-            Bitmap bmLogo = Properties.Resources.ZMC_shop;
+            Bitmap bmLogo = Properties.Resources.zmc;
             Image zmc = bmLogo;
             e.Graphics.DrawImage(zmc, 22, 10);
             #endregion

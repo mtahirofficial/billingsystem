@@ -158,7 +158,7 @@ namespace Billing_System
         SqlConnection conConnection;
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            lblCompanyName.Text = "Zahid Medicine Company | " + DateTime.Now.Year.ToString();
 
 
 

@@ -34,7 +34,7 @@
             this.lblDeveloperLink = new System.Windows.Forms.LinkLabel();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.lblCompanyName = new DevComponents.DotNetBar.LabelX();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.lblMedicineStock = new System.Windows.Forms.LinkLabel();
             this.lblNewMedicine = new System.Windows.Forms.LinkLabel();
@@ -65,7 +65,7 @@
             this.bunifuGradientPanel1.Controls.Add(this.lblDeveloperLink);
             this.bunifuGradientPanel1.Controls.Add(this.labelX2);
             this.bunifuGradientPanel1.Controls.Add(this.pictureBox1);
-            this.bunifuGradientPanel1.Controls.Add(this.labelX1);
+            this.bunifuGradientPanel1.Controls.Add(this.lblCompanyName);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
@@ -121,19 +121,18 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // labelX1
+            // lblCompanyName
             // 
-            this.labelX1.BackColor = System.Drawing.Color.White;
+            this.lblCompanyName.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(25, 0);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(188, 24);
-            this.labelX1.TabIndex = 7;
-            this.labelX1.Text = "Zahid Medicine Company | 2018";
+            this.lblCompanyName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblCompanyName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyName.Location = new System.Drawing.Point(25, 0);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(188, 24);
+            this.lblCompanyName.TabIndex = 7;
             // 
             // bunifuGradientPanel2
             // 
@@ -363,7 +362,7 @@
         }
 
         #endregion
-        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.LabelX lblCompanyName;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel lblDeveloperLink;

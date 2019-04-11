@@ -19,7 +19,8 @@ namespace Billing_System
             Process[] mobj_proList = Process.GetProcessesByName(mobj_pro.ProcessName);
             if (mobj_proList.Length > 1)
             {
-                MessageBox.Show("Can not open another one ", "Alert", MessageBoxButtons.OK);
+                new MainForm().Activate();
+                //MessageBox.Show("Can not open another one ", "Alert", MessageBoxButtons.OK);
                 return;
             }
             Application.EnableVisualStyles();
