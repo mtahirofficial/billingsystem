@@ -318,7 +318,7 @@ public static string maxNumber;
                     cmdInsertAmount.ExecuteNonQuery();
                     MessageBox.Show("Record is Entered.", "Message", MessageBoxButtons.OK);
 
-                    
+
 
                 }
                 catch (Exception ex)
@@ -523,7 +523,7 @@ public static string maxNumber;
                     }
                     if (i >= numberOfItemsPrintedSoFar + 1)
                     {
-                        e.Graphics.DrawString("-----------------------------------------------------------------------------------------------", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(15, 963));
+                        e.Graphics.DrawString("-----------------------------------------------------------------------------------------------", new Font("Calibri", 20, FontStyle.Bold), Brushes.DarkSlateBlue, new Point(15, 963));
                         e.Graphics.DrawImage(Warranty, 22, 990);
                     }
                 }
@@ -535,34 +535,37 @@ public static string maxNumber;
                 }
 
             }
-            e.Graphics.DrawString("-----------------------------------------------------------------------------------------------", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(15, 843));
+            e.Graphics.DrawString("-----------------------------------------------------------------------------------------------", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(15, 890));
 
             // Advance
-            e.Graphics.DrawString("Advance", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(85, 865));
+            e.Graphics.DrawString("Advance:", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(85, 910));
             if (txtAdvance.Text != "" && Convert.ToInt32(txtAdvance.Text) >= 0)
             {
-                e.Graphics.DrawString(txtAdvance.Text + "/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 865));
+                e.Graphics.DrawString(txtAdvance.Text + "/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(240, 910));
             }
             else
             {
-                e.Graphics.DrawString("0/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 865));
+                e.Graphics.DrawString("0/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(240, 910));
             }
+            e.Graphics.DrawString("||", new Font("Calibri", 20, FontStyle.Bold), Brushes.DarkSlateBlue, new Point(398, 903));
+            e.Graphics.DrawString("||", new Font("Calibri", 20, FontStyle.Bold), Brushes.DarkSlateBlue, new Point(398, 912));
 
             // Balance
-            e.Graphics.DrawString("Balance", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(85, 900));
+            e.Graphics.DrawString("Balance:", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(450, 910));
             if (txtAdvance.Text != "" && Convert.ToInt32(txtAdvance.Text) >= 0)
             {
-                e.Graphics.DrawString(txtBalance.Text + "/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 900));
+                e.Graphics.DrawString(txtBalance.Text + "/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(610, 910));
             }
             else
             {
-                e.Graphics.DrawString("0/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 900));
+                e.Graphics.DrawString("0/- Rs", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(610, 910));
             }
 
+            e.Graphics.DrawString("-----------------------------------------------------------------------------------------------", new Font("Calibri", 20, FontStyle.Bold), Brushes.DarkSlateBlue, new Point(15, 925));
 
-            e.Graphics.DrawString("Total Amount", new Font("Calibri", 25, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(85, 935));
-            e.Graphics.DrawString(lblTotalBill.Text + "/-Rs", new Font("Calibri", 25, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(550, 935));
-            e.Graphics.DrawString("-----------------------------------------------------------------------------------------------", new Font("Calibri", 20, FontStyle.Regular), Brushes.DarkSlateBlue, new Point(15, 963));
+            e.Graphics.DrawString("Total Amount", new Font("Calibri", 25, FontStyle.Bold), Brushes.DarkSlateBlue, new Point(85, 942));
+            e.Graphics.DrawString(lblTotalBill.Text + "/-Rs", new Font("Calibri", 25, FontStyle.Bold), Brushes.DarkSlateBlue, new Point(550, 942));
+            e.Graphics.DrawString("-----------------------------------------------------------------------------------------------", new Font("Calibri", 20, FontStyle.Bold), Brushes.DarkSlateBlue, new Point(15, 963));
 
             #endregion
 

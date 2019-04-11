@@ -562,7 +562,7 @@ namespace Billing_System.User_Controls
             this.txtBalance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBalance.ForeColor = System.Drawing.Color.Black;
             this.txtBalance.Location = new System.Drawing.Point(809, 580);
-            this.txtBalance.MaxLength = 11;
+            this.txtBalance.MaxLength = 7;
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.PreventEnterBeep = true;
             this.txtBalance.Size = new System.Drawing.Size(149, 33);
@@ -608,7 +608,7 @@ namespace Billing_System.User_Controls
             this.txtAdvance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdvance.ForeColor = System.Drawing.Color.Black;
             this.txtAdvance.Location = new System.Drawing.Point(809, 545);
-            this.txtAdvance.MaxLength = 11;
+            this.txtAdvance.MaxLength = 7;
             this.txtAdvance.Name = "txtAdvance";
             this.txtAdvance.PreventEnterBeep = true;
             this.txtAdvance.Size = new System.Drawing.Size(149, 33);
