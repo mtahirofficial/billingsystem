@@ -271,119 +271,119 @@ public static string maxNumber;
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            if (conConnection.State == ConnectionState.Closed)
-            {
-                conConnection.Open();
-            }
-            if (txtName.Text.Trim() == "" && txtPhone.Text.Trim() == "" && lblTotalBill.Text.Trim() == "0")
-            {
-                MessageBox.Show("All Fields are Required.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtName.Focus();
-            }
-            else if (txtName.Text.Trim() == "")
-            {
-                MessageBox.Show("Customer Name is Required.", "Name Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtName.Focus();
-            }
-            else if (txtPhone.Text.Trim() == "")
-            {
-                MessageBox.Show("Customer Phone No. is Required.", "Phone Number Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPhone.Focus();
-            }
-            else if (lblTotalBill.Text.Trim() == "0")
-            {
-                MessageBox.Show("Total Amount is Zero.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                try
-                {
-                    if (dgvMediList.Rows.Count >= 1)
-                    {
-                        foreach (DataGridViewRow row in dgvMediList.Rows)
-                        {
+            //if (conConnection.State == ConnectionState.Closed)
+            //{
+            //    conConnection.Open();
+            //}
+            //if (txtName.Text.Trim() == "" && txtPhone.Text.Trim() == "" && lblTotalBill.Text.Trim() == "0")
+            //{
+            //    MessageBox.Show("All Fields are Required.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    txtName.Focus();
+            //}
+            //else if (txtName.Text.Trim() == "")
+            //{
+            //    MessageBox.Show("Customer Name is Required.", "Name Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    txtName.Focus();
+            //}
+            //else if (txtPhone.Text.Trim() == "")
+            //{
+            //    MessageBox.Show("Customer Phone No. is Required.", "Phone Number Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    txtPhone.Focus();
+            //}
+            //else if (lblTotalBill.Text.Trim() == "0")
+            //{
+            //    MessageBox.Show("Total Amount is Zero.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            //else
+            //{
+                //try
+                //{
+                    //if (dgvMediList.Rows.Count >= 1)
+                    //{
+                    //    foreach (DataGridViewRow row in dgvMediList.Rows)
+                    //    {
 
 
-                            SqlCommand cmdInsert = new SqlCommand("Insert into ShopInvoice (InvoiceNo, SerialNo, Product, BatchNo, Quantity, UnitPrice, TotalPrice, Date) values ('" + txtInvoice.Text + "','" + row.Cells[0].Value + "','" + row.Cells[1].Value + "','" + row.Cells[2].Value + "','" + row.Cells[4].Value + "','" + row.Cells[5].Value + "','" + row.Cells[6].Value + "','" + row.Cells[7].Value + "')", conConnection);
-                            cmdInsert.ExecuteNonQuery();
-                            SqlCommand cmdUpdate = new SqlCommand("Update MedicineStock set Quantity = '" + row.Cells[3].Value + "' where MedicineName = '" + row.Cells[1].Value + "'", conConnection);
-                            cmdUpdate.ExecuteNonQuery();
+                    //        SqlCommand cmdInsert = new SqlCommand("Insert into ShopInvoice (InvoiceNo, SerialNo, Product, BatchNo, Quantity, UnitPrice, TotalPrice, Date) values ('" + txtInvoice.Text + "','" + row.Cells[0].Value + "','" + row.Cells[1].Value + "','" + row.Cells[2].Value + "','" + row.Cells[4].Value + "','" + row.Cells[5].Value + "','" + row.Cells[6].Value + "','" + row.Cells[7].Value + "')", conConnection);
+                    //        cmdInsert.ExecuteNonQuery();
+                    //        SqlCommand cmdUpdate = new SqlCommand("Update MedicineStock set Quantity = '" + row.Cells[3].Value + "' where MedicineName = '" + row.Cells[1].Value + "'", conConnection);
+                    //        cmdUpdate.ExecuteNonQuery();
 
-                            //MessageBox.Show("0:" + row.Cells[0].Value + "   1:" + row.Cells[1].Value + "   2:" + row.Cells[2].Value + "   3:" + row.Cells[3].Value + "   4:" + row.Cells[4].Value + "   5:" + row.Cells[5].Value + "   6:" + row.Cells[6].Value + "   7:" + row.Cells[7].Value, "Test DatagridView", MessageBoxButtons.OK);
-                        }
-                    }
-                    SqlCommand cmdInsertCustomer = new SqlCommand("INSERT INTO ShopCustomer ([InvoiceNo], [CustomerName], [Mobile]) VALUES ('" + txtInvoice.Text + "', '" + txtName.Text + "','" + txtPhone.Text + "')", conConnection);
-                    cmdInsertCustomer.ExecuteNonQuery();
-                    SqlCommand cmdInsertAmount = new SqlCommand("INSERT INTO ShopAmount ([InvoiceNo], [TotalAmount]) VALUES ('" + txtInvoice.Text + "','" + lblTotalBill.Text + "')", conConnection);
-                    cmdInsertAmount.ExecuteNonQuery();
-                    MessageBox.Show("Record is Entered.", "Message", MessageBoxButtons.OK);
+                    //        //MessageBox.Show("0:" + row.Cells[0].Value + "   1:" + row.Cells[1].Value + "   2:" + row.Cells[2].Value + "   3:" + row.Cells[3].Value + "   4:" + row.Cells[4].Value + "   5:" + row.Cells[5].Value + "   6:" + row.Cells[6].Value + "   7:" + row.Cells[7].Value, "Test DatagridView", MessageBoxButtons.OK);
+                    //    }
+                    //}
+                    //SqlCommand cmdInsertCustomer = new SqlCommand("INSERT INTO ShopCustomer ([InvoiceNo], [CustomerName], [Mobile]) VALUES ('" + txtInvoice.Text + "', '" + txtName.Text + "','" + txtPhone.Text + "')", conConnection);
+                    //cmdInsertCustomer.ExecuteNonQuery();
+                    //SqlCommand cmdInsertAmount = new SqlCommand("INSERT INTO ShopAmount ([InvoiceNo], [TotalAmount]) VALUES ('" + txtInvoice.Text + "','" + lblTotalBill.Text + "')", conConnection);
+                    //cmdInsertAmount.ExecuteNonQuery();
+                    //MessageBox.Show("Record is Entered.", "Message", MessageBoxButtons.OK);
 
 
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message);
 
-                }
-                finally
-                {
+                //}
+                //finally
+                //{
 
                     printPreviewDialog1.Document = printDocument1;
                     printPreviewDialog1.ShowDialog();
 
-                    string fileName = (string)(txtPhone.Text);
-                    //string directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                    string directory = Application.StartupPath + "//invoices";
-                    //string directory = "~/Invoices";
+                    //string fileName = (string)(txtPhone.Text);
+                    ////string directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    //string directory = Application.StartupPath + "//invoices";
+                    ////string directory = "~/Invoices";
 
 
-                    printDocument1.PrinterSettings = new PrinterSettings()
-                    {
-                        // set the printer to 'Microsoft Print to PDF'
-                        PrinterName = "Microsoft Print to PDF",
+                    //printDocument1.PrinterSettings = new PrinterSettings()
+                    //{
+                    //    // set the printer to 'Microsoft Print to PDF'
+                    //    PrinterName = "Microsoft Print to PDF",
 
-                        // tell the object this document will print to file
-                        PrintToFile = true,
+                    //    // tell the object this document will print to file
+                    //    PrintToFile = true,
 
-                        // set the filename to whatever you like (full path)
-                        PrintFileName = Path.Combine(directory, fileName + ".pdf"),
-                    };
+                    //    // set the filename to whatever you like (full path)
+                    //    PrintFileName = Path.Combine(directory, fileName + ".pdf"),
+                    //};
 
-                    printDocument1.Print();
-
-
-                    ClearTextBoxes();
-
-                    MaxInvoice();
+                    //printDocument1.Print();
 
 
-                    try
-                    {
-                        string query = "select ID, MedicineName from MedicineStock";
-                        FillCombo(cbMediName, query, "MedicineName", "ID");
-                        cbMediName_SelectedIndexChanged(null, null);
+                    //ClearTextBoxes();
+
+                    //MaxInvoice();
 
 
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                    //try
+                    //{
+                    //    string query = "select ID, MedicineName from MedicineStock";
+                    //    FillCombo(cbMediName, query, "MedicineName", "ID");
+                    //    cbMediName_SelectedIndexChanged(null, null);
 
-                    txtName.Focus();
-                    txtSrNo.Text = "1";
-                    txtPrice.Text = "0";
-                    txtAdvance.Text = "0";
-                    txtBalance.Text = "0";
-                    medicineList.Clear();
-                    dgvMediList.DataSource = null;
-                    lblTotalBill.Text = "0";
-                    conConnection.Close();
 
-                }
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    MessageBox.Show(ex.Message);
+                    //}
 
-            }
+                    //txtName.Focus();
+                    //txtSrNo.Text = "1";
+                    //txtPrice.Text = "0";
+                    //txtAdvance.Text = "0";
+                    //txtBalance.Text = "0";
+                    //medicineList.Clear();
+                    //dgvMediList.DataSource = null;
+                    //lblTotalBill.Text = "0";
+                    //conConnection.Close();
+
+                //}
+
+            //}
 
         }
 
@@ -504,7 +504,7 @@ public static string maxNumber;
             for (var i = numberOfItemsPrintedSoFar; i < medicineList.Count; i++)
             {
                 numberOfItemsPerPage++;
-                if (numberOfItemsPerPage <= 28)
+                if (numberOfItemsPerPage <= 25)
                 {
                     numberOfItemsPrintedSoFar++;
                     if (numberOfItemsPrintedSoFar <= medicineList.Count)
@@ -688,7 +688,11 @@ public static string maxNumber;
                 MessageBox.Show("Quantity is Required.", "Quantity Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtQty.Focus();
             }
-
+            else if (txtQty.Text.Trim() == "0")
+            {
+                MessageBox.Show("Quantity must be greater than 0 (Zero).", "Quantity Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtQty.Focus();
+            }
             else if (txtRate.Text.Trim() == "")
             {
                 MessageBox.Show("Rate is Required.", "Rate Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -728,7 +732,12 @@ public static string maxNumber;
                             dgvMediList.DataSource = null;
                             dgvMediList.DataSource = medicineList;
 
+
+                            string strSrNo = txtSrNo.Text;
+                            txtSrNo.Text = Convert.ToString(Convert.ToInt32(strSrNo) + 1);
+                            txtItems.Text = strSrNo;
                         }
+                        
                     }
                     else // if index found
                     {
@@ -747,6 +756,7 @@ public static string maxNumber;
                             dgvMediList.DataSource = null;
                             dgvMediList.DataSource = medicineList;
                         }
+                        
                     }
 
                     //dgvMediList.Rows.Add(null, txtSrNo.Text, cbMediName.Text, txtBatch.Text, txtQty.Text, txtRate.Text, txtPrice.Text, DateTime.Now.ToShortDateString());
@@ -765,12 +775,12 @@ public static string maxNumber;
                     MessageBox.Show(ex.Message);
                 }
 
-                string strSrNo = txtSrNo.Text;
+                
                 //cbMediName.SelectedIndex = 0;
                 txtQty.Clear();
-                txtSrNo.Text = Convert.ToString(Convert.ToInt32(strSrNo) + 1);
+                
                 cbMediName.Focus();
-                txtItems.Text = strSrNo;
+                
                 txtPrice.Text = "0";
             }
         }
